@@ -1,0 +1,94 @@
+.particles-singup,
+.bg_space {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+.boxL,
+.box {
+  width: 300px;
+  height: 100vh;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  text-align: center;
+}
+.box h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.boxL h1 {
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.boxL input[type="email"],
+.boxL input[type="password"],
+.box input[type="email"],
+.box input[type="password"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 170px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.boxL input[type="email"],
+.boxL input[type="password"]{
+  color: #4b4b4b;
+}
+.boxL input[type="email"]:focus,
+.boxL input[type="password"]:focus,
+.box input[type="email"]:focus,
+.box input[type="password"]:focus {
+  width: 250px;
+  border-color: #2ecc71;
+}
+.boxL input[type="submit"],
+.box input[type="submit"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.boxL input[type="submit"]{
+  color: #000000;
+}
+.boxL input[type="submit"]:hover,
+.box input[type="submit"]:hover {
+  background: #2ecc71;
+}
+  .auth-loading{
+    text-align: center;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  .loading-text{
+    color: tomato;
+    padding: 10px;
+    font-family: Roboto;
+    font-size: 20px;
+    letter-spacing: 1px;
+  }

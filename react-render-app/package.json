@@ -1,0 +1,69 @@
+{
+  "name": "js_react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@date-io/date-fns": "^2.6.1",
+    "@material-ui/core": "^4.9.11",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.53",
+    "@material-ui/pickers": "^3.2.10",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@y0c/react-datepicker": "^1.0.3",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
+    "classnames": "^2.2.6",
+    "date-fns": "^2.12.0",
+    "echarts": "^4.7.0",
+    "echarts-for-react": "^2.0.15-beta.1",
+    "firebase": "^7.13.1",
+    "framer-motion": "^1.10.3",
+    "mdbreact": "^4.25.5",
+    "node-sass": "^4.14.0",
+    "nodemailer": "^6.4.6",
+    "rc-datepicker": "^5.0.15",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
+    "react-bootstrap-carousel": "^4.0.4",
+    "react-calendar": "^3.0.1",
+    "react-dom": "^16.13.1",
+    "react-material-ui-carousel": "^1.4.5",
+    "react-modal": "^3.11.2",
+    "react-particles-js": "^3.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.0",
+    "redux-promise-middleware": "^6.1.2",
+    "uniqid": "^5.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "firestore-export-import": "^0.5.0",
+    "prettier": "2.0.5",
+    "react-redux": "^7.2.0",
+    "recharts": "^1.8.5",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  }
+}
