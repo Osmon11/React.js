@@ -20,8 +20,6 @@
     "node-sass": "^4.14.0",
     "rc-datepicker": "^5.0.15",
     "react": "^16.13.1",
-    "react-bootstrap": "^1.0.1",
-    "react-bootstrap-carousel": "^4.0.4",
     "react-dom": "^16.13.1",
     "react-material-ui-carousel": "^1.4.5",
     "react-modal": "^3.11.2",

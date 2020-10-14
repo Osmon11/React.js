@@ -1,12 +1,13 @@
 .slider {
   overflow: hidden;
   position: relative;
-  height: 100vh;
-  width: 100vw;
+  height: 80vh;
+  width: 100%;
   color: #fff;
 }
 .slider__slides {
   position: relative;
+  width: 100%;
   height: 100%;
 }
 .slider__slide {
@@ -36,6 +37,7 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: auto;
   height: 100%;
   text-transform: uppercase;
   line-height: 1;
@@ -211,7 +213,7 @@
 .slider__slide-part-inner {
   overflow: hidden;
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   background-size: 0 0;
   background-repeat: no-repeat;

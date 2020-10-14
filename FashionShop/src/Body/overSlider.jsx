@@ -7,10 +7,24 @@ import cart1 from '../img/Layer_423.png';
 import cart2 from '../img/Layer_425.png';
 import cart3 from '../img/Layer_424.png';
 import cart4 from '../img/Layer_426.png';
+import { Button, makeStyles } from '@material-ui/core';
 
-const OverSlider = props => {
+const useStyles = makeStyles((theme) => ({
+  addToCardButton: {
+    backgroundColor: '#db3838',
+    color: '#ffffff',
+    cursor: 'pointer',
+    zIndex: 100,
+    '&:hover': {
+      backgroundColor: '#05c005',
+      transform: 'scale(1.1)',
+    },
+  },
+}));
+
+const OverSlider = ({carts}) => {
+  const classes = useStyles();
   let arrG = ['id1', 'id2', 'id3'];
-  let carts = props.carts;
 
   return (
     <div className="slider-over">
@@ -20,7 +34,7 @@ const OverSlider = props => {
         <span>Popular</span>
       </div>
       <div className="slide--o">
-        <Carousel autoPlay={false} indicators={true} animation='slide'>
+        <Carousel autoPlay={false} indicators={true} animation='slide' navButtonsAlwaysVisible={true}>
           {arrG.map(function (x) {
             return (
               <Grid key={x} container spacing={2}>
@@ -44,7 +58,7 @@ const OverSlider = props => {
                               precision={0.5}
                             />
                           </div>
-                          <div className="cost-btn tipicalL">Add to cart</div>
+                          <Button className={classes.addToCardButton} variant="contained">Add to cart</Button>
                         </div>
                       </div>
                     </Grid>

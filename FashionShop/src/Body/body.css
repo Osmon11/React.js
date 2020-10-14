@@ -29,10 +29,7 @@
   font-weight: 500;
 }
 .body {
-  position: relative;
-  width: 90vw;
-  margin: 0 5vw;
-  padding: 0 15px;
+  width: 100%;
   background-color: #ffffff;
 }
 .body_nav {
@@ -114,7 +111,8 @@
 
 .men {
   display: flex;
-  margin: 15vh 0;
+  margin: 10vh 0;
+  justify-content: space-between;
 }
 .women {
   display: flex;
@@ -123,14 +121,6 @@
 .for-men {
   width: 50%;
   height: 100%;
-}
-.men-header {
-  font-size: 13px;
-  width: 70%;
-  padding-bottom: 5vh;
-  margin-bottom: 7vh;
-  border-bottom: 1.5px solid #808080;
-  text-transform: uppercase;
 }
 .men-img {
   width: 455px;
@@ -167,15 +157,13 @@
 .women-img .descr-btn {
   padding: 5px 20px;
   background-color: #db3838;
+  color: #ffffff;
   font-size: 10px;
   cursor: pointer;
-  -webkit-transition: all 0.25s;
-  -o-transition: all 0.25s;
-  transition: all 0.25s;
 }
 .men-img .descr-btn:hover,
 .women-img .descr-btn:hover {
-  padding: 7px 25px;
+  transform: scale(1.1);
 }
 .men-img .descrip p,
 .women-img .descrip p {
@@ -213,25 +201,12 @@
   top: 0;
 }
 .swipe-cart {
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
   width: 100%;
   height: 100%;
 }
-.swipe .s--prev {
-  position: absolute;
-  animation: dshow2 1s 1;
-  top: 0;
-}
-.swipe-women .m--prev {
-  position: absolute;
-  animation: dshow2 1s 1;
-  top: 0;
-}
 .panel {
   display: flex;
-  width: 496px;
+  width: 100%;
   height: 60%;
   justify-content: space-between;
 }
@@ -280,35 +255,6 @@
 .rate-area > label:active {
   position: relative;
 }
-.buttons {
-  display: flex;
-  height: 25px;
-  justify-content: flex-end;
-  margin-bottom: 10vh;
-}
-.btn-prev,
-.btn-next {
-  width: 25px;
-  height: 100%;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: ease 0.4s;
-}
-.btn-prev,
-.btn-next,
-.panel-cart img {
-  height: 100%;
-}
-.btn-prev:hover,
-.btn-next:hover {
-  background-color: #06faee;
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-}
-.btn-next {
-  margin-left: 5px;
-}
 
 /* Slider-Over */
 
@@ -343,11 +289,6 @@
   border-bottom: 1.5px solid #9c9c9c;
   font-weight: 500;
   text-transform: uppercase;
-}
-.over-buttons {
-  display: flex;
-  height: 25px;
-  justify-content: flex-end;
 }
 .left-active:nth-child(1) {
   color: #444444;
@@ -412,26 +353,10 @@
 /* Optional content */
 
 @media (max-width: 620px) {
-  body {
-    font-size: 13px;
-    line-height: 1.5em;
-  }
-  .buttons {
-    display: none;
-  }
 }
 @media screen and (min-width: 768px) {
-  .body_nav {
-    font-size: 12px;
-  }
 }
 @media screen and (min-width: 950px) {
-  .body_nav {
-    font-size: 13px;
-  }
 }
 @media screen and (min-width: 1050px) {
-  .body_nav {
-    font-size: 13px;
-  }
 }

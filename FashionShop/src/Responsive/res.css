@@ -39,11 +39,8 @@
 .res-nav:hover {
   border-bottom: 3px solid #db3838;
 }
-#breadcrumbs {
-  display: none;
-}
 @media all and (max-width: 700px) {
-  .header {
+  appBars {
     display: none;
   }
   .res-nav_logo {
@@ -58,14 +55,6 @@
   }
   .slider__control {
     display: none;
-  }
-  .body_nav {
-    display: none;
-  }
-  #breadcrumbs {
-    display: block;
-    font-size: 10px;
-    padding: 10px;
   }
   .particles-header {
     display: none;
@@ -84,12 +73,6 @@
     margin-top: 70px;
     height: 80vh;
   }
-  #breadcrumbs {
-    display: block;
-    font-size: 8px;
-    line-height: 13px;
-    padding: 10px;
-  }
 }
 @media all and (max-width: 300px) {
   .res-nav_logo {
@@ -103,11 +86,5 @@
   .slider {
     margin-top: 60px;
     height: 60vh;
-  }
-  #breadcrumbs {
-    display: block;
-    font-size: 6px;
-    line-height: 10px;
-    padding: 10px;
   }
 }

@@ -62,9 +62,10 @@ a {
 }
 .particles-header {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 100%;
-  top: 85px;
+  top: 0;
+  left: 0;
 }
 .particles-login {
   position: absolute;
@@ -236,11 +237,11 @@ a {
 .search {
   display: flex;
   position: relative;
-  max-width: 348px;
+  max-width: 365px;
   flex-grow: 1;
   border: 2px solid #ff4747;
   height: 27px;
-  margin: 24px 20px 0 45px;
+  width: 30%;
 }
 .search-wrapper {
   justify-content: flex-start;
@@ -302,16 +303,12 @@ a {
 .container {
   background-color: #ffffff;
 }
-.roof1 {
-  display: grid;
-  grid-template-columns: 33% 33% 26%;
-  grid-template-rows: 18px;
-  grid-gap: 24px;
-  padding: 1px 70px 7px;
-  border-bottom: 0.5px solid #cccaca;
+.roof {
+  width: 100%;
+  height: 100%;
 }
 .roof3 {
-  text-align: end;
+  text-align: center;
 }
 #roof2 {
   width: 245px;
@@ -319,7 +316,7 @@ a {
   opacity: 1;
   color: #444444;
   font-family: 'Gotham - Book';
-  font-size: 8px;
+  font-size: initial;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.35px;
@@ -333,7 +330,8 @@ a {
   text-align: center;
 }
 #roof_icon {
-  width: 8px;
+  width: auto;
+  height: auto;
 }
 .nav_logo {
   height: 50px;
@@ -342,58 +340,48 @@ a {
 .s_input {
   float: right;
   display: flex;
-  padding: 0 60px;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   background-color: #ffffff;
 }
 .roof_search {
-  width: 140px;
+  width: 30%;
   height: 70px;
-  position: relative;
-  padding: 10px 15px;
-  top: 9px;
   background-color: #ffffff;
+  background-image: url(../img/Store.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .nav_icons {
-  display: grid;
-  grid-template-columns: 20px 20px 20px 20px;
-  grid-template-rows: 20px;
-  grid-gap: 5px;
-  padding-top: 29px;
-  cursor: pointer;
-}
-.nav_icons:hover {
-  color: red;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .n_icon {
+  width: 10%;
+  cursor: pointer;
+}
+.n_icon img{
   border-radius: 50%;
 }
-.n_icon:hover {
-  box-shadow: inset 0 0 0 23px #53ea93;
+.n_icon img:hover {
+  background-color: #53ea93;
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
 }
 
 /* NavBar */
-.nav_bar {
-  float: left;
-  color: #f9f9f9;
-  background-color: #000000;
-  display: grid;
-  grid-template-columns: 25px 22px 42px 56px 29px 24px 39px 92px;
-  height: 40px;
-  width: 100%;
-  box-sizing: border-box;
-  grid-gap: 43px;
-  padding: 0 70px;
-}
 .nav_text {
   cursor: pointer;
 }
 .nav {
   position: relative;
   vertical-align: middle;
+  text-align: center;
   padding: 15px 0;
   font-size: 8px;
   text-transform: uppercase;
@@ -404,11 +392,10 @@ a {
   border-bottom: 3px solid #db3838;
 }
 .shopping_cart {
-  position: relative;
+  position: absolute;
   text-decoration: none;
   font-size: 9px;
   letter-spacing: 0.35px;
-  height: 100%;
   padding: 14px 5px;
   background-color: #db3838;
   box-sizing: border-box;
@@ -418,80 +405,9 @@ a {
   width: 8px;
 }
 
-/* DropDown */
-.select-box {
-  cursor: pointer;
-  position: relative;
-  max-width: 20em;
-  width: 100px;
-  height: 100%;
-  box-sizing: border-box;
-  padding-top: 2px;
-}
-
-.select,
-.label {
-  color: 979797;
-  display: block;
-  font: 400 17px/2em 'Source Sans Pro', sans-serif;
-}
-
-.select {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  height: 100%;
-  opacity: 0;
-  background: none transparent;
-  border: 0 none;
-  cursor: pointer;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  box-shadow: -3px 3px 10px -2px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.label {
-  position: relative;
-  cursor: pointer;
-  height: 100%;
-  bottom: 2px;
-  color: #979797;
-  font-family: 'Gotham - Book';
-  font-size: 12px;
-  font-weight: 400;
-  width: 100%;
-  margin-right: 12px;
-}
-.open .label::after {
-  content: '▲';
-}
-.label::after {
-  content: '▼';
-  font-size: 12px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  cursor: pointer;
-}
-.dropItem {
-  color: #979797;
-  font-family: 'Gotham - Book';
-  font-size: 12px;
-  font-weight: 400;
-  width: 100%;
-}
 
 /* Media */
 @media screen and (min-width: 768px) {
-  .s_input {
-    padding: 0 100px;
-  }
-  .nav_bar {
-    padding: 0 71px;
-    grid-template-columns: 30px 26px 52px 70px 35px 28px 49px 115px;
-  }
   .nav {
     font-size: 10px;
   }
@@ -501,18 +417,6 @@ a {
   }
 }
 @media screen and (min-width: 850px) {
-  .s_input {
-    padding: 0 150px;
-  }
-  .nav_bar {
-    padding: 0 122px;
-  }
 }
 @media screen and (min-width: 950px) {
-  .s_input {
-    padding: 0 195px;
-  }
-  .nav_bar {
-    padding: 0 170px;
-  }
 }
