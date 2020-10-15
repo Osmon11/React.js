@@ -24,7 +24,8 @@
   transition: 0.3s;
   cursor: pointer;
 }
-.dush-exit:hover, .mobile .dush-exit:focus {
+.dush-exit:hover,
+.mobile .dush-exit:focus {
   background: #ff0000;
   box-shadow: 0 15px 20px #ff0000c0;
   transform: translateY(-5px);
@@ -107,7 +108,7 @@ button {
   line-height: 10px;
   color: #d1d7e1;
 }
-.seeMore{
+.seeMore {
   text-align: center;
   text-decoration: none;
 }
@@ -120,8 +121,8 @@ button {
   padding: 15px 10px;
   box-sizing: border-box;
 }
-.chart-header{
-  color: #58606D;
+.chart-header {
+  color: #58606d;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -131,36 +132,40 @@ button {
   height: 100%;
 }
 .head-to {
-  color: #BDC7D6;
+  color: #bdc7d6;
   display: flex;
   align-items: center;
   text-align: center;
-  }
-  .total{
-    font-size: 11px;
-  }
-  .tooltip-item{
-    font-size: 9px;
-  }
-  .rechart-header{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-  }
-  .header-sum{
-    color: #0b85b9;
-    font-size: 16px;
-  }
-  .sum-descriptionA,
-  .sum-descriptionB{
-    width: 100%;
-    text-transform: uppercase;
-    font-size: 10px;
-    text-align: center;
-  }
-  .sum-descriptionA{
-    color: #0b85b9;
-  }
-  .sum-descriptionB{
-    color: #BDC7D6;
-  }
+}
+.total {
+  font-size: 11px;
+}
+.tooltip-item {
+  font-size: 9px;
+}
+.rechart-header {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+.header-sumA {
+  color: #0b85b9;
+  font-size: 16px;
+}
+.header-sumB {
+  color: rgb(255, 70, 131);
+  font-size: 16px;
+}
+.sum-descriptionA,
+.sum-descriptionB {
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 10px;
+  text-align: center;
+}
+.sum-descriptionA {
+  color: #0b85b9;
+}
+.sum-descriptionB {
+  color: rgb(255, 70, 131);
+}

@@ -1,16 +1,16 @@
-import React, { useCallback, useState, useRef } from 'react';
-import { withRouter } from 'react-router-dom';
-import base from './config';
-import './login.css';
-import Particles from 'react-particles-js';
-import { Alert, AlertTitle } from '@material-ui/lab';
-import IconButton from '@material-ui/core/IconButton';
-import Collapse from '@material-ui/core/Collapse';
-import CloseIcon from '@material-ui/icons/Close';
+import React, { useCallback, useState, useRef } from "react";
+import { withRouter } from "react-router-dom";
+import base from "./config";
+import "./login.css";
+import Particles from "react-particles-js";
+import { Alert, AlertTitle } from "@material-ui/lab";
+import IconButton from "@material-ui/core/IconButton";
+import Collapse from "@material-ui/core/Collapse";
+import CloseIcon from "@material-ui/icons/Close";
 
 const Login = ({ history }) => {
   const [open, setOpen] = useState(false);
-  let message = useRef({ message: 'All right!' });
+  let message = useRef({ message: "All right!" });
   const handleLogin = useCallback(
     async (e) => {
       e.preventDefault();
@@ -19,7 +19,7 @@ const Login = ({ history }) => {
         await base
           .auth()
           .signInWithEmailAndPassword(email.value, password.value);
-        history.push('/admin-cs30');
+        history.push("/admin-cs30");
       } catch (error) {
         message.current = error;
         setOpen(true);
@@ -31,28 +31,28 @@ const Login = ({ history }) => {
     <>
       <Collapse in={open}>
         <Alert
-          severity="error"
+          severity='error'
           action={
             <IconButton
-              aria-label="close"
-              color="inherit"
-              size="small"
+              aria-label='close'
+              color='inherit'
+              size='small'
               onClick={() => {
                 setOpen(false);
               }}
             >
-              <CloseIcon fontSize="inherit" />
+              <CloseIcon fontSize='inherit' />
             </IconButton>
           }
         >
           <AlertTitle>Error</AlertTitle>
-          <strong style={{ color: '#ce1126' }}>
+          <strong style={{ color: "#ce1126" }}>
             {message.current.message}
           </strong>
         </Alert>
       </Collapse>
       <Particles
-        className="particles-login"
+        className='particles-login'
         params={{
           particles: {
             number: {
@@ -63,12 +63,12 @@ const Login = ({ history }) => {
               },
             },
             color: {
-              value: '#505050',
+              value: "#505050",
             },
             lineLinked: {
               enable: true,
               distance: 70,
-              color: '#414141',
+              color: "#414141",
             },
             size: {
               value: 2,
@@ -83,23 +83,24 @@ const Login = ({ history }) => {
             events: {
               onHover: {
                 enable: true,
-                mode: 'grab',
+                mode: "grab",
               },
             },
           },
         }}
       />
       <form
-        className="boxL"
+        className='boxL'
         onSubmit={handleLogin}
-        action="index.html"
-        method="post"
+        action='index.html'
+        method='post'
       >
         <h1>Login</h1>
-        <input type="email" name="email" placeholder="UserEmail" />
-        <input type="password" name="password" placeholder="Password" />
-        <input type="submit" value="Login" />
+        <input type='email' name='email' placeholder='UserEmail' />
+        <input type='password' name='password' placeholder='Password' />
+        <input type='submit' value='Login' />
       </form>
+      <div className='loginFormBg' />
     </>
   );
 };

@@ -59,7 +59,7 @@
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-.mobile .photos_cart .descrip{
+.mobile .photos_cart .descrip {
   opacity: 1;
 }
 .photos_cart .descrip:hover {
@@ -78,7 +78,8 @@
 
 /* Men */
 
-.men, .women {
+.men,
+.women {
   display: flex;
   margin: 10vh 0;
   width: 100%;
@@ -118,7 +119,7 @@
   transition: all 0.5s;
 }
 .mobile .men-img .descrip,
-.mobile .women-img .descrip{
+.mobile .women-img .descrip {
   opacity: 1;
 }
 .men-img .descrip:hover,
@@ -215,7 +216,8 @@
   background-color: #db3838;
   cursor: pointer;
 }
-.cost-btn:hover, .mobile .cost-btn:focus {
+.cost-btn:hover,
+.mobile .cost-btn:focus {
   background-color: #05c005;
 }
 .rate-area > label:active {
@@ -226,8 +228,7 @@
 
 .slider-over {
   width: 100%;
-  height: 248px;
-  margin-bottom: 30vh;
+  height: 100%;
 }
 .slide--o {
   width: 100%;
@@ -270,8 +271,8 @@
 }
 
 /* From Blog */
-
 .blog-conteiner {
+  margin: 5vh 0;
   padding: 5vh 0;
   border-top: 1px solid #e4e4e4;
 }
@@ -304,7 +305,7 @@
 }
 .blog-text p {
   color: #444444;
-  font-family: 'Gotham - Book';
+  font-family: "Gotham - Book";
   font-size: 11px;
   font-weight: 400;
 }

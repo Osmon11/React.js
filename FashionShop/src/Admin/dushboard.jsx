@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import Chart from "./Chart";
-import Deposits from "./Deposits";
+import ChartDeposits from "./ChartDeposits";
 import Goods from "./goods/Goods";
 import SpacingGrid from "./dush-info";
 import Grid from "@material-ui/core/Grid";
@@ -22,33 +22,29 @@ const styles = makeStyles((theme) => ({
   },
 }));
 
-export default function Dushboard ( props ) {
-	 const classes = styles();
-	const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-	return (
+export default function Dushboard(props) {
+  const classes = styles();
+  const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  return (
     <Grid container spacing={3}>
-      {/* Info */}
       <Grid item xs={12}>
         <SpacingGrid />
       </Grid>
-      {/* Chart */}
-      <Grid item xs={12} md={8} lg={9}>
+      <Grid item xs={12}>
         <Paper className={clsx(classes.chart)}>
+          <ChartDeposits />
+        </Paper>
+      </Grid>
+      <Grid item xs={12}>
+        <Paper className={fixedHeightPaper}>
           <Chart />
         </Paper>
       </Grid>
-      {/* Recent Deposits */}
-      <Grid item xs={4} sm={4} md={4} lg={3}>
-        <Paper className={fixedHeightPaper}>
-          <Deposits />
-        </Paper>
-      </Grid>
-      {/* Recent Orders */}
-      <Grid item xs={8} sm={8}>
+      <Grid item xs={12}>
         <Paper className={classes.paper}>
           <Goods />
         </Paper>
       </Grid>
     </Grid>
-  );	
-};
+  );
+}

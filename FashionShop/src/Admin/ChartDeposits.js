@@ -1,66 +1,50 @@
 import React from "react";
-import "./dushboard.css";
+import Link from "@material-ui/core/Link";
 import ReactEcharts from "echarts-for-react";
 import echarts from "echarts/lib/echarts";
 import "echarts/lib/chart/line";
 import "echarts/lib/component/tooltip";
-import "echarts/lib/component/grid";
 import "echarts/lib/component/dataZoom";
+import "./dushboard.css";
+import { data, date } from "./Chart";
 
-export let date = [];
-export let data = [Math.random() * 300];
+function preventDefault(event) {
+  event.preventDefault();
+}
 
 function getOption() {
-  let base = +new Date(2020, 12, 31);
-  let oneDay = 24 * 3600 * 1000;
-
-  for (let i = 1; i < 6000; i++) {
-    let now = new Date((base += oneDay));
-    date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join("/"));
-    data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
-  }
-  console.log(data);
-
-  let options = {
-    color: ["#02a0df"],
+  return {
     tooltip: {
       trigger: "axis",
-      axisPointer: {
-        type: "cross",
+      position: function (pt) {
+        return [pt[0], "10%"];
       },
-    },
-    grid: {
-      containLabel: true,
     },
     xAxis: {
-      axisLine: {
-        show: false,
-      },
-      axisTick: {
-        show: false,
-      },
-      axisLabel: {
-        show: true,
-      },
       type: "category",
       boundaryGap: false,
       data: date,
-    },
-    yAxis: {
+      axisLabel: {
+        show: true,
+      },
       axisLine: {
         show: false,
       },
       axisTick: {
         show: false,
       },
-      splitLine: {
-        show: true,
-      },
+    },
+    yAxis: {
       type: "value",
       boundaryGap: [0, "100%"],
       axisLabel: {
         show: true,
-        formatter: "$ {value}",
+      },
+      axisLine: {
+        show: false,
+      },
+      axisTick: {
+        show: false,
       },
     },
     dataZoom: [
@@ -86,48 +70,71 @@ function getOption() {
     ],
     series: [
       {
-        name: "Всего",
-        type: "line",
+        name: "ЧИСТАЯ",
         data: data,
-        symbol: "circle",
+        type: "line",
+        showSymbol: true,
         smooth: true,
         sampling: "average",
         symbolSize: 5,
         itemStyle: {
           color: "#fff",
-          borderColor: "#4F5F6F",
+          borderColor: "#DFE6EB",
           borderWidth: 2,
         },
         lineStyle: {
-          color: "#02a0df",
+          color: "#DFE6EB",
+        },
+        areaStyle: {
+          color: "#DFE6EB",
+        },
+      },
+      {
+        name: "ВСЕГО",
+        data: data,
+        type: "line",
+        showSymbol: true,
+        smooth: true,
+        sampling: "average",
+        symbolSize: 5,
+        itemStyle: {
+          color: "#fff",
+          borderColor: "rgb(255, 70, 131)",
+          borderWidth: 2,
         },
         areaStyle: {
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
             {
               offset: 0,
-              color: "#1996c7",
-            },
-            {
-              offset: 0.25,
-              color: "#1996c7",
+              color: "rgb(255, 158, 68)",
             },
             {
               offset: 1,
-              color: "#fff",
+              color: "rgb(255, 70, 131)",
             },
           ]),
+        },
+        lineStyle: {
+          color: "rgb(255, 70, 131)",
         },
       },
     ],
   };
-  return options;
 }
 
-export default function Chart() {
+export default function Deposits() {
   return (
     <React.Fragment>
-      <div className='chart-head'>
-        <span className='chart-header'>продажи за период</span>
+      <div className='chart-header chart-head'>прибыль</div>
+      <div className='rechart-header'>
+        <span className='header-sumA'>
+          $506700 <br />
+          <div className='sum-descriptionA'>всего</div>
+        </span>
+        <span className='header-sumB'>
+          $45000 <br />
+          <div className='sum-descriptionB'>чистая</div>
+        </span>
       </div>
       <ReactEcharts
         option={getOption()}
@@ -135,6 +142,11 @@ export default function Chart() {
         lazyUpdate={true}
         theme={"theme_name"}
       />
+      <div className='seeMore'>
+        <Link color='primary' href='#' onClick={preventDefault}>
+          View balance
+        </Link>
+      </div>
     </React.Fragment>
   );
 }
