@@ -6,7 +6,6 @@ import telly from "../img/telly.png";
 import ltelly from "../img/white-telly.png";
 import dollar from "../img/1dollar.png";
 import clock from "../img/clock.png";
-import logo from "../img/Store.png";
 import facebook from "../img/facebook.png";
 import twitter from "../img/twitter.png";
 import instagram from "../img/intsagram.png";
@@ -14,14 +13,10 @@ import youtube from "../img/youtube.png";
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import { Grid, Menu, MenuItem } from "@material-ui/core";
 
-let select = true,
-    inputValue = React.createRef();
+let inputValue = React.createRef();
 export let signal = true;
 export const searchGoods = event => {
     event.preventDefault();
@@ -64,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     appBarRoot3: {
         backgroundColor: '#000000'
     },
-    sellecthButton: {
+    sellectButton: {
         width: 100 + '%',
         height: 100 + '%',
     },
@@ -112,7 +107,7 @@ const Header = (props) => {
                                 <input ref={inputValue} id="searchGoods" className="search-wrapper_input" placeholder="Search" type="text" aria-label="Поиск товаров" role="search"/>
                             </div>
                             <div className="select-box" >
-                                <Button className={classes.sellecthButton} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                                <Button className={classes.sellectButton} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
                                     Categories
                                 </Button>
                                 <Menu

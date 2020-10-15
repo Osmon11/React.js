@@ -8,9 +8,8 @@ import Grid from '@material-ui/core/Grid';
 const FromBlog = (props) => {
   return (
     <div className="blog-conteiner">
-      <div className="blog-header tipical">from the blog</div>
-      <Grid container spacing={2}>
-        <Grid item xs={4}>
+      <Grid item container xs={12} spacing={2}>
+        <Grid item xs={4} sm={4}>
           <div className="blog-cart">
             <span className="descrip">
               <div className="zero tipicalL">02</div>

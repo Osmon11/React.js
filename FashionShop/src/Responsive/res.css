@@ -36,11 +36,11 @@
   text-transform: uppercase;
   letter-spacing: 1.35px;
 }
-.res-nav:hover {
+.res-nav:hover, .mobile .res-nav:focus {
   border-bottom: 3px solid #db3838;
 }
 @media all and (max-width: 700px) {
-  appBars {
+  #appBars {
     display: none;
   }
   .res-nav_logo {

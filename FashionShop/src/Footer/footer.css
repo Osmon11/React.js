@@ -5,7 +5,6 @@
 
 .footer {
   padding: 10vh 8vw;
-  padding-right: 5vw;
   border-top: 1px solid #e4e4e4;
   background-color: #ffffff;
 }
@@ -14,73 +13,11 @@
   border-bottom: 1px solid #e4e4e4;
   padding-bottom: 30px;
 }
-
-/* Footer Submit */
-
-/* .search.error {
-  -webkit-animation: 2s linear error;
-  -o-animation: 2s linear error;
-  animation: 2s linear error;
-}
-.search-wrapper {
-  justify-content: flex-start;
-  border-right-width: 0;
-  border-radius: 3px 0 0 3px;
-  align-items: stretch;
-  width: 100%;
-}
-.search-wrapper_input {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0 0 0 8px;
-  border: 1px solid transparent;
-  font-size: 14px;
-  font-family: GTEestiProText, Arial, sans-serif;
-  color: #001a34;
-  line-height: 18px;
-  outline: none;
-  vertical-align: middle;
-  border-radius: 2px 0 0 2px;
-  text-overflow: ellipsis;
-  box-shadow: none;
-}
-.search-wrap-brn {
-  height: 36px;
-  display: flex;
-  align-items: center;
-  min-width: 40px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  overflow: hidden;
-  background-color: #ff4747;
-}
-.search-btn {
-  cursor: pointer;
-  border-color: transparent;
-  height: 100%;
-  width: 100%;
-  background-color: #ff4747;
-  border: none;
-}
-.search-btn::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  width: 24px;
-  height: 24px;
-  color: #fff;
-  background-image: url(../img/icons.png);
-  background-position: -8px -1328px;
-}
-.search.error {
-  -webkit-animation: 2s linear error;
-  -o-animation: 2s linear error;
-  animation: 2s linear error;
-} */
 .f-fashion {
   width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 5px;
 }
 .f-form {
@@ -96,12 +33,15 @@
 }
 .fashion-text {
   font-size: 11px;
+  text-align: start;
   color: #808080;
   font-family: 'Gotham - Book';
   font-weight: 400;
 }
 .sing-up {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding-bottom: 20px;
   border-bottom: 1px solid #e4e4e4;
 }
@@ -111,61 +51,26 @@
   font-size: 12px;
   font-weight: 700;
   text-align: center;
-  padding-top: 20px;
 }
 .f-info {
   display: flex;
+}
+.information, .customer, .store {
+  width: 33%;
   padding-top: 15px;
 }
-.information {
-  width: 30%;
-}
-.information span {
+.information span, .customer span, .store span {
   font-size: 13px;
-  color: #444444;
+  color: #808080;
   font-family: 'Gotham - Book';
   font-weight: 400;
   text-transform: uppercase;
 }
-.information ul li {
+.information ul li, .customer ul li, .store ul li {
   padding-top: 10px;
   color: #808080;
   font-size: 11px;
   font-family: 'Gotham';
-  font-weight: 300;
-}
-.customer {
-  width: 30%;
-}
-.customer span {
-  font-size: 13px;
-  color: #444444;
-  font-family: Gotham;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.customer ul li {
-  padding-top: 10px;
-  color: #808080;
-  font-size: 11px;
-  font-family: 'Gotham Book';
-  font-weight: 300;
-}
-.store {
-  width: 35%;
-}
-.store span {
-  font-size: 13px;
-  color: #444444;
-  font-family: Gotham;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.store ul li {
-  padding-top: 10px;
-  color: #808080;
-  font-size: 11px;
-  font-family: 'Gotham Book';
   font-weight: 300;
 }
 ul li img {
@@ -182,4 +87,43 @@ ul li img {
   font-size: 10px;
   font-weight: 400;
   padding: 30px;
+}
+
+@media (max-width: 1000px) {
+  .footer{
+    padding: 1rem;
+  }
+}
+@media (max-width: 950px) {
+  .information span, .customer span, .store span {
+    text-transform: lowercase;
+  }
+}
+@media (max-width: 710px) {
+  .information span, .customer span, .store span {
+    font-size: 12px;
+  }
+}
+@media (max-width: 630px) {
+  .f-body {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .f-form, .f-fashion{
+    width: 100%;
+    margin-left: 0;
+  }
+}
+@media (max-width: 430px) {
+  .f-info{
+    flex-wrap: wrap;
+  }
+  .information, .customer {
+    width: 50%;
+  }
+  .store{
+    width: 100%;
+    text-align: center;
+  }
 }

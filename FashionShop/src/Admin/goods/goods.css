@@ -24,13 +24,19 @@
     text-shadow: 1px 1px #c60;
   }
   .to-mark:not(:checked) > label:hover,
-  .to-mark:not(:checked) > label:hover ~ label {
+  .to-mark:not(:checked) > label:hover ~ label,
+  .mobile .to-mark:not(:checked) > label:focus,
+  .mobile .to-mark:not(:checked) > label:focus ~ label {
     color: gold;
   }
   .to-mark > input:checked + label:hover,
   .to-mark > input:checked + label:hover ~ label,
   .to-mark > input:checked ~ label:hover,
   .to-mark > input:checked ~ label:hover ~ label,
+  .mobile .to-mark > input:checked + label:hover,
+  .mobile .to-mark > input:checked + label:hover ~ label,
+  .mobile .to-mark > input:checked ~ label:hover,
+  .mobile .to-mark > input:checked ~ label:hover ~ label,
   .to-mark > label:hover ~ input:checked ~ label {
     color: gold;
     text-shadow: 1px 1px goldenrod;

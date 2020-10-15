@@ -72,7 +72,7 @@ a {
   width: 100vw;
   height: 100vh;
 }
-.conteiner {
+.container {
   overflow: hidden;
 }
 .cart {
@@ -135,6 +135,11 @@ a {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath fill='005bff' d='M12 10.587l6.293-6.294a1 1 0 111.414 1.414l-6.293 6.295 6.293 6.294a1 1 0 11-1.414 1.414L12 13.416 5.707 19.71a1 1 0 01-1.414-1.414l6.293-6.294-6.293-6.295a1 1 0 011.414-1.414L12 10.587z'/%3E%3C/svg%3E");
 }
 .cart-close:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.mobile .cart-close:focus {
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
@@ -222,7 +227,7 @@ a {
   cursor: pointer;
   transition: 0.3s all;
 }
-.btn-primary:hover {
+.btn-primary:hover, .mobile .btn-primary:focus {
   background-color: darkcyan;
   color: white;
 }
@@ -367,11 +372,16 @@ a {
 .n_icon img{
   border-radius: 50%;
 }
-.n_icon img:hover {
+.mobile .n_icon img{
   background-color: #53ea93;
+}
+.n_icon img:hover{
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
+}
+.mobile .n_icon img:focus {
+  background-color: #fff;
 }
 
 /* NavBar */
@@ -388,7 +398,7 @@ a {
   letter-spacing: 0.35px;
   height: 40px;
 }
-.nav:hover {
+.nav:hover, .mobile .nav:focus {
   border-bottom: 3px solid #db3838;
 }
 .shopping_cart {

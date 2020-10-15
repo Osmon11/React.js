@@ -13,10 +13,18 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      display: 'block'
+      display: 'block',
+      isTouch: 'container',
     };
   }
   componentDidMount() {
+    try {
+      document.createEvent("TouchEvent");
+      this.setState({isTouch: 'container mobile'})
+    }
+    catch (e) {
+        this.setState({isTouch: 'container'})
+    }
     setTimeout(() => {
       return this.setState({
         display: 'none'
@@ -39,7 +47,7 @@ class App extends Component {
             <LinearProgress style={{ maxHeight: 2 }} color="secondary" />
           </div>
           <Router key="router">
-            <div className="conteiner">
+            <div className={this.state.isTouch}>
               <PrivateRoute path="/admin-cs30" component={Admin} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/singup-master" component={Singup} />

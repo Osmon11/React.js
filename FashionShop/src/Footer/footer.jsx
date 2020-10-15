@@ -5,9 +5,27 @@ import location from "../img/lockation.png";
 import mail from "../img/mail.png";
 import phon from "../img/telephon.png";
 import {searchGoods} from "../Header/header";
+import { Button, makeStyles, Menu, MenuItem } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+    sellectButton: {
+        height: 100 + '%',
+    },
+    }));
 
 const Footer = (props) => {
+    const classes = useStyles();
     let inputValue = React.createRef();
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
     return(
         <footer className="footer">
             <div className="f-body">
@@ -31,23 +49,143 @@ const Footer = (props) => {
                             </div>
                         </div>
                     </div>
+
                     <div className="f-info">
                         <div className="information">
                             <span>information</span>
                             <ul>
-                                <li>► Careers</li>
-                                <li>► Investor Relations</li>
-                                <li>► Press Releases</li>
-                                <li>► Shop with Points</li>
+                                <li>
+                                    <Button className={classes.sellectButton} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                                    ►Careers
+                                    </Button>
+                                    <Menu
+                                        id="simple-menu"
+                                        anchorEl={anchorEl}
+                                        keepMounted
+                                        open={Boolean(anchorEl)}
+                                        onClose={handleClose}
+                                    >
+                                        <MenuItem onClick={handleClose}>For men</MenuItem>
+                                        <MenuItem onClick={handleClose}>For women</MenuItem>
+                                        <MenuItem onClick={handleClose}>For kids</MenuItem>
+                                    </Menu>
+                                </li>
+                                <li>
+                                    <Button className={classes.sellectButton} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                                    ►Investor Relations
+                                    </Button>
+                                    <Menu
+                                        id="simple-menu"
+                                        anchorEl={anchorEl}
+                                        keepMounted
+                                        open={Boolean(anchorEl)}
+                                        onClose={handleClose}
+                                    >
+                                        <MenuItem onClick={handleClose}>For men</MenuItem>
+                                        <MenuItem onClick={handleClose}>For women</MenuItem>
+                                        <MenuItem onClick={handleClose}>For kids</MenuItem>
+                                    </Menu>
+                                </li>
+                                <li>
+                                    <Button className={classes.sellectButton} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                                    ►Press Releases
+                                    </Button>
+                                    <Menu
+                                        id="simple-menu"
+                                        anchorEl={anchorEl}
+                                        keepMounted
+                                        open={Boolean(anchorEl)}
+                                        onClose={handleClose}
+                                    >
+                                        <MenuItem onClick={handleClose}>For men</MenuItem>
+                                        <MenuItem onClick={handleClose}>For women</MenuItem>
+                                        <MenuItem onClick={handleClose}>For kids</MenuItem>
+                                    </Menu>
+                                </li>
+                                <li>
+                                    <Button className={classes.sellectButton} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                                    ►Shop with Points
+                                    </Button>
+                                    <Menu
+                                        id="simple-menu"
+                                        anchorEl={anchorEl}
+                                        keepMounted
+                                        open={Boolean(anchorEl)}
+                                        onClose={handleClose}
+                                    >
+                                        <MenuItem onClick={handleClose}>For men</MenuItem>
+                                        <MenuItem onClick={handleClose}>For women</MenuItem>
+                                        <MenuItem onClick={handleClose}>For kids</MenuItem>
+                                    </Menu>
+                                </li>
                             </ul>
                         </div>
                         <div className="customer">
                             <span>customer care</span>
                             <ul>
-                                <li>► Returns</li>
-                                <li>► Shipping Info</li>
-                                <li>► Gift Cards</li>
-                                <li>► Size Guide</li>
+                                <li>
+                                    <Button className={classes.sellectButton} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                                    ►Returns
+                                    </Button>
+                                    <Menu
+                                        id="simple-menu"
+                                        anchorEl={anchorEl}
+                                        keepMounted
+                                        open={Boolean(anchorEl)}
+                                        onClose={handleClose}
+                                    >
+                                        <MenuItem onClick={handleClose}>For men</MenuItem>
+                                        <MenuItem onClick={handleClose}>For women</MenuItem>
+                                        <MenuItem onClick={handleClose}>For kids</MenuItem>
+                                    </Menu>
+                                </li>
+                                <li>
+                                    <Button className={classes.sellectButton} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                                        ►Shipping Info
+                                    </Button>
+                                    <Menu
+                                        id="simple-menu"
+                                        anchorEl={anchorEl}
+                                        keepMounted
+                                        open={Boolean(anchorEl)}
+                                        onClose={handleClose}
+                                    >
+                                        <MenuItem onClick={handleClose}>For men</MenuItem>
+                                        <MenuItem onClick={handleClose}>For women</MenuItem>
+                                        <MenuItem onClick={handleClose}>For kids</MenuItem>
+                                    </Menu>
+                                </li>
+                                <li>
+                                    <Button className={classes.sellectButton} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                                        ►Gift Cards
+                                    </Button>
+                                    <Menu
+                                        id="simple-menu"
+                                        anchorEl={anchorEl}
+                                        keepMounted
+                                        open={Boolean(anchorEl)}
+                                        onClose={handleClose}
+                                    >
+                                        <MenuItem onClick={handleClose}>For men</MenuItem>
+                                        <MenuItem onClick={handleClose}>For women</MenuItem>
+                                        <MenuItem onClick={handleClose}>For kids</MenuItem>
+                                    </Menu>
+                                </li>
+                                <li><Button className={classes.sellectButton} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                                        ►Size Guide
+                                    </Button>
+                                    <Menu
+                                        id="simple-menu"
+                                        anchorEl={anchorEl}
+                                        keepMounted
+                                        open={Boolean(anchorEl)}
+                                        onClose={handleClose}
+                                    >
+                                        <MenuItem onClick={handleClose}>For men</MenuItem>
+                                        <MenuItem onClick={handleClose}>For women</MenuItem>
+                                        <MenuItem onClick={handleClose}>For kids</MenuItem>
+                                    </Menu>
+                                </li>
                             </ul>
                         </div>
                         <div className="store">

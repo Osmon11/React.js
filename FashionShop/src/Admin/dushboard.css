@@ -24,7 +24,7 @@
   transition: 0.3s;
   cursor: pointer;
 }
-.dush-exit:hover {
+.dush-exit:hover, .mobile .dush-exit:focus {
   background: #ff0000;
   box-shadow: 0 15px 20px #ff0000c0;
   transform: translateY(-5px);

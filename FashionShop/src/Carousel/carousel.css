@@ -181,7 +181,7 @@
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
-.slider__slide-readmore:hover:before {
+.slider__slide-readmore:hover:before, .mobile .slider__slide-readmore:focus:before {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
@@ -425,7 +425,7 @@
     margin-bottom: 15px;
   }
   .slider__slide-heading{
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 15px;
   }
   .slider__slide-readmore{
@@ -439,7 +439,7 @@
     margin-bottom: 15px;
   }
   .slider__slide-heading{
-    font-size: 20px;
+    font-size: 15px;
     margin-bottom: 15px;
   }
   .slider__slide-readmore{
