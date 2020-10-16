@@ -313,12 +313,16 @@ const Admin = (props) => {
           <div className={classes.appBarSpacer} />
           <Container maxWidth='lg' className={classes.container}>
             <Switch>
-              <Route exact path='/' component={Analytics} />
-              <Route exact path='/sales' component={GoodsList} />
-              <Route exact path='/finance' component={GoodsList} />
-              <Route exact path='/goods&list' component={GoodsList} />
-              <Route exact path='/news' component={GoodsList} />
-              <Route exact path='/goods&list/add_goods' component={AddGoods} />
+              <Route exact path='/admin-cs30' component={Analytics} />
+              <Route exact path='admin-cs30/sales' component={GoodsList} />
+              <Route exact path='admin-cs30/finance' component={GoodsList} />
+              <Route exact path='admin-cs30/goods&list' component={GoodsList} />
+              <Route exact path='admin-cs30/news' component={GoodsList} />
+              <Route
+                exact
+                path='admin-cs30/goods&list/add_goods'
+                component={AddGoods}
+              />
             </Switch>
             <Box pt={4}>
               <Footer />

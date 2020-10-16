@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import Admin from "./Admin/admin";
-import { AuthProvider } from "./Admin/admin-log/auth";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivateRoute from "./Admin/admin-log/privateRoute";
 import Login from "./Admin/admin-log/admin-login";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Singup from "./Admin/admin-log/admin-singup";
 import Public from "./Assets/public-page";
-import { Container, CssBaseline } from "@material-ui/core";
+import { CssBaseline } from "@material-ui/core";
+import Page404 from "./404";
 
 class App extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class App extends Component {
   }
   render() {
     return (
-      <AuthProvider>
+      <>
         <div
           style={{
             minWidth: "100%",
@@ -46,15 +46,20 @@ class App extends Component {
         <Router key='router'>
           <CssBaseline />
           <div className={this.state.isTouch}>
-            <PrivateRoute path='/admin-cs30' component={Public} />
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/singup-master' component={Singup} />
-            {/* <Container> */}
-            <Route exact path='/' component={Admin} />
-            {/* </Container> */}
+            <Switch>
+              <PrivateRoute exact path='/admin-cs30' component={Admin} />
+              <Route exact path='/login' component={Login} />
+              <PrivateRoute
+                exact
+                path='admin-cs30/singup-master'
+                component={Singup}
+              />
+              <Route exact path='/' component={Public} />
+              <Route component={Page404} />
+            </Switch>
           </div>
         </Router>
-      </AuthProvider>
+      </>
     );
   }
 }
