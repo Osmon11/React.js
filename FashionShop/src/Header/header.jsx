@@ -17,7 +17,6 @@ import Button from "@material-ui/core/Button";
 import { Grid, Menu, MenuItem } from "@material-ui/core";
 
 let inputValue = React.createRef();
-export let signal = true;
 export const searchGoods = (event) => {
   event.preventDefault();
   let ePersist = event.target;
@@ -33,12 +32,8 @@ export const searchGoods = (event) => {
 };
 
 export function renderBasket(e) {
-  signal = true;
-  if (e.target.closest(".conteiner")) {
-    e.target.closest(".conteiner").classList.add("show");
-  }
-  if (e.target.closest("#res-header")) {
-    console.log(e.target.closest("#res-header"));
+  if (e.target.closest(".container")) {
+    e.target.closest(".container").classList.add("show");
   }
 }
 

@@ -77,3 +77,57 @@ code {
 .mobile .field a:focus {
   background: #69880e;
 }
+@media (max-width: 300px) {
+  .sky h2 {
+    font-size: 8em;
+  }
+  .field {
+    padding: 20px;
+  }
+  .field h2 {
+    font-size: 1em;
+  }
+  .field a {
+    font-size: 15px;
+    border-radius: 30px;
+    height: 40px;
+    line-height: 40px;
+    width: 130px;
+  }
+}
+@media (max-width: 400px) {
+  .sky h2 {
+    font-size: 9em;
+  }
+  .field {
+    padding: 30px;
+  }
+  .field h2 {
+    font-size: 1.5em;
+  }
+  .field a {
+    font-size: 15px;
+    border-radius: 35px;
+    height: 45px;
+    line-height: 45px;
+    width: 130px;
+  }
+}
+@media (max-width: 600px) {
+  .sky h2 {
+    font-size: 9em;
+  }
+  .field {
+    padding: 30px;
+  }
+  .field h2 {
+    font-size: 1.5em;
+  }
+  .field a {
+    font-size: 15px;
+    border-radius: 35px;
+    height: 45px;
+    line-height: 45px;
+    width: 130px;
+  }
+}
