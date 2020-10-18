@@ -77,30 +77,16 @@
 }
 
 /* Men */
-
-.men,
-.women {
-  display: flex;
-  margin: 10vh 0;
-  width: 100%;
-}
-.men {
-  justify-content: space-between;
-}
 .for-men {
+  margin: 10vh 0;
   width: 100%;
   height: 100%;
 }
-.men-img {
-  width: 455px;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.5);
-}
+.men-img,
 .women-img {
-  width: 455px;
+  width: 100%;
   position: relative;
   background-color: rgba(0, 0, 0, 0.5);
-  float: right;
 }
 .men-img .descrip,
 .women-img .descrip {
@@ -140,6 +126,7 @@
 /* Body-Slider  */
 .slider-women,
 .slider-men {
+  margin: 10vh 0;
   width: 100%;
   height: 100%;
 }
@@ -190,7 +177,7 @@
   justify-content: space-between;
 }
 .panel-cost-text {
-  font-size: 10px;
+  font-size: initial;
   padding: 5px 0;
   border-bottom: 1px solid #e6e6e6;
 }
@@ -225,15 +212,6 @@
 }
 
 /* Slider-Over */
-
-.slider-over {
-  width: 100%;
-  height: 100%;
-}
-.slide--o {
-  width: 100%;
-  height: 100%;
-}
 .over-conteiner {
   position: absolute;
   width: 100%;
@@ -244,30 +222,14 @@
   height: 240px;
 }
 .over-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 7vh;
-}
-.over-header span {
-  width: 25%;
+  width: 100%;
   color: #9c9c9c;
   font-family: Gotham;
   font-size: 13px;
   border-bottom: 1.5px solid #9c9c9c;
   font-weight: 500;
   text-transform: uppercase;
-}
-.left-active:nth-child(1) {
-  color: #444444;
-  border-bottom: 1.5px solid #747474;
-}
-.mid-active:nth-child(2) {
-  color: #444444;
-  border-bottom: 1.5px solid #747474;
-}
-.right-active:nth-child(3) {
-  color: #444444;
-  border-bottom: 1.5px solid #747474;
+  margin-bottom: 7vh;
 }
 
 /* From Blog */
@@ -309,13 +271,35 @@
   font-size: 11px;
   font-weight: 400;
 }
-/* Optional content */
 
-@media (max-width: 620px) {
+/* Media */
+@media screen and (max-width: 1100px) {
+  .cost-text {
+    flex-direction: column;
+  }
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 950px) {
+  .men-img .descrip p,
+  .women-img .descrip p {
+    font-size: 20px;
+  }
 }
-@media screen and (min-width: 950px) {
+@media screen and (max-width: 825px) {
+  .descrip p {
+    font-size: 15px;
+  }
 }
-@media screen and (min-width: 1050px) {
+@media screen and (max-width: 750px) {
+  .descrip p,
+  .panel-cost-text {
+    font-size: 13px;
+  }
+}
+@media (max-width: 600px) {
+  .descrip p {
+    font-size: 18px;
+  }
+  .panel-cost-text {
+    font-size: initial;
+  }
 }

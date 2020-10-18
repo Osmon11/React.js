@@ -9,6 +9,9 @@ import Carousel from "react-material-ui-carousel";
 import { Button, Grid, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
+  themeSpasing: {
+    padding: theme.spacing(1),
+  },
   readMoreButton: {
     backgroundColor: "#db3838",
     color: "#ffffff",
@@ -21,12 +24,19 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#db3830",
       transform: "scale(1.1)",
     },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "13px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "12px",
+    },
   },
   addToCardButton: {
     backgroundColor: "#db3838",
     color: "#ffffff",
     cursor: "pointer",
     zIndex: 100,
+    fontSize: theme.typography.fontSize,
     "&:hover": {
       backgroundColor: "#05c005",
       transform: "scale(1.1)",
@@ -35,14 +45,34 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#db3830",
       transform: "scale(1.1)",
     },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "13px",
+      padding: "6px 10px",
+    },
+    [theme.breakpoints.down("870")]: {
+      fontSize: "12px",
+      padding: "5px",
+    },
   },
 }));
 
-const WomenSlider = ({ slides }) => {
+const WomenSlider = () => {
   const classes = useStyles();
+  let slides = [
+    {
+      name: "fWslide",
+      cart1: cart1,
+      cart2: cart2,
+    },
+    {
+      name: "sWslide",
+      cart1: cart1,
+      cart2: cart2,
+    },
+  ];
 
   return (
-    <>
+    <Grid item container xs={12} spacing={2}>
       <Grid item xs={12} sm={6}>
         <div className='slider-women'>
           <Carousel
@@ -73,6 +103,8 @@ const WomenSlider = ({ slides }) => {
                           <div className='cost-text-cost'>
                             <span className='tipical'>£ 61.19</span>
                             <Rating
+                              className={classes.themeSpasing}
+                              placeholder='Моя оценка'
                               name='half-rating'
                               defaultValue={2.5}
                               precision={0.5}
@@ -87,15 +119,16 @@ const WomenSlider = ({ slides }) => {
                         </div>
                       </div>
                       <div className='panel-cost'>
-                        <div className='panel-cost-text'>
+                        <div className='panel-cost-text tipical'>
                           Printed Chiffon Dress
                         </div>
                         <div className='cost-text'>
                           <div className='cost-text-cost'>
                             <span className='tipical'>£ 61.19</span>
                             <Rating
-                              name='half-rating'
+                              className={classes.themeSpasing}
                               placeholder='Моя оценка'
+                              name='half-rating'
                               defaultValue={2.5}
                               precision={0.5}
                             />
@@ -133,20 +166,8 @@ const WomenSlider = ({ slides }) => {
           </div>
         </div>
       </Grid>
-    </>
+    </Grid>
   );
 };
 
 export default WomenSlider;
-export let womenSlides = [
-  {
-    name: "fWslide",
-    cart1: cart1,
-    cart2: cart2,
-  },
-  {
-    name: "sWslide",
-    cart1: cart1,
-    cart2: cart2,
-  },
-];

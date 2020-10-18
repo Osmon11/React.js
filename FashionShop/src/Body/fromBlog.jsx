@@ -19,8 +19,8 @@ const FromBlog = (props) => {
 
   return (
     <div className='blog-conteiner'>
-      <Grid item container xs={12}>
-        <Grid item xs={4} sm={4}>
+      <Grid item container xs={12} sm={12}>
+        <Grid item xs={12} sm={4}>
           <Paper className={classes.breadcrumbPaper}>
             <div className='blog-cart'>
               <span className='descrip'>
@@ -41,7 +41,7 @@ const FromBlog = (props) => {
             </div>
           </Paper>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <Paper className={classes.breadcrumbPaper}>
             <div className='blog-cart center-img'>
               <span className='descrip'>
@@ -62,7 +62,7 @@ const FromBlog = (props) => {
             </div>
           </Paper>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={4}>
           <Paper className={classes.breadcrumbPaper}>
             <div className='blog-cart'>
               <span className='descrip'>

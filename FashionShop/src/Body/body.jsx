@@ -6,11 +6,8 @@ import women3 from "../img/Layer_429.png";
 import formen from "../img/Layer_415.png";
 import { NavLink } from "react-router-dom";
 import MenSlider from "./menSlider";
-import { menSlides } from "./menSlider";
 import WomenSlider from "./womenSlider";
-import { womenSlides } from "./womenSlider";
 import OverSlider from "./overSlider";
-import { overCarts } from "./overSlider";
 import FromBlog from "./fromBlog";
 import Grid from "@material-ui/core/Grid";
 import ActiveLastBreadcrumb from "../Responsive/res-bread-crumbs";
@@ -35,6 +32,20 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#db3830",
       transform: "scale(1.1)",
     },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "13px",
+      padding: "6px 10px",
+    },
+    [theme.breakpoints.down("870")]: {
+      fontSize: "11px",
+      padding: "5",
+      textTransform: "capitalize",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "13px",
+      padding: "6px 10px",
+      textTransform: "uppercase",
+    },
   },
 }));
 
@@ -44,7 +55,7 @@ const Body = () => {
   let img = [women1, women2, women3];
   return (
     <div className='body'>
-      <Grid container>
+      <Grid container spacing={2}>
         <Grid item xs={12}>
           <Paper className={classes.breadcrumbPaper} elevation={0} square>
             <ActiveLastBreadcrumb />
@@ -53,7 +64,7 @@ const Body = () => {
         <Grid container item xs={12} spacing={2}>
           {descrip.map((item, i) => {
             return (
-              <Grid item xs={4} sm={4} key={item + i}>
+              <Grid item xs={12} sm={4} key={item + i}>
                 <Paper className={classes.breadcrumbPaper}>
                   <div className='photos_cart'>
                     <span className='descrip'>
@@ -76,42 +87,34 @@ const Body = () => {
             );
           })}
         </Grid>
-        <Grid item container xs={12}>
-          <div className='men'>
-            <Grid item xs={12} sm={6}>
-              <div className='for-men'>
-                <div className='men-img'>
-                  <span className='descrip'>
-                    <div className='descrip-text'>
-                      <p className='tipicalL'>for men</p>
-                      <Button
-                        className={classes.readMoreButton}
-                        variant='contained'
-                      >
-                        <NavLink to='' style={{ color: "#fff" }}>
-                          More
-                        </NavLink>
-                      </Button>
-                    </div>
-                  </span>
-                  <img src={formen} alt='women' />
-                </div>
+        <Grid item container xs={12} spacing={2}>
+          <Grid item xs={12} sm={6}>
+            <div className='for-men'>
+              <div className='men-img'>
+                <span className='descrip'>
+                  <div className='descrip-text'>
+                    <p className='tipicalL'>for men</p>
+                    <Button
+                      className={classes.readMoreButton}
+                      variant='contained'
+                    >
+                      <NavLink to='' style={{ color: "#fff" }}>
+                        More
+                      </NavLink>
+                    </Button>
+                  </div>
+                </span>
+                <img src={formen} alt='women' />
               </div>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <MenSlider slides={menSlides} />
-            </Grid>
-          </div>
+            </div>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <MenSlider />
+          </Grid>
         </Grid>
-        <Grid item container xs={12}>
-          <div className='women'>
-            <WomenSlider slides={womenSlides} />
-          </div>
-        </Grid>
-        <Grid item container xs={12}>
-          <OverSlider carts={overCarts} />
-        </Grid>
-        <Grid item container xs={12}>
+        <WomenSlider />
+        <OverSlider />
+        <Grid item container xs={12} spacing={2}>
           <FromBlog />
         </Grid>
       </Grid>

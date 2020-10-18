@@ -7,9 +7,12 @@ import cart1 from "../img/Layer_423.png";
 import cart2 from "../img/Layer_425.png";
 import cart3 from "../img/Layer_424.png";
 import cart4 from "../img/Layer_426.png";
-import { Button, makeStyles } from "@material-ui/core";
+import { Button, makeStyles, useMediaQuery, useTheme } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
+  themeSpasing: {
+    padding: theme.spacing(1),
+  },
   addToCardButton: {
     backgroundColor: "#db3838",
     color: "#ffffff",
@@ -23,71 +26,137 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: "#db3830",
       transform: "scale(1.1)",
     },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "13px",
+      padding: "6px 10px",
+    },
+    [theme.breakpoints.down("870")]: {
+      fontSize: "12px",
+      padding: "5",
+    },
+  },
+  gridOverflowHidden: {
+    overflow: "hidden",
   },
 }));
 
-const OverSlider = ({ carts }) => {
+const OverSlider = () => {
   const classes = useStyles();
-  let arrG = ["id1", "id2", "id3"];
+  const theme = useTheme();
+  let match = useMediaQuery(theme.breakpoints.down("xs"));
+  let arrMd = [
+    [cart1, cart2, cart3, cart4],
+    [cart1, cart2, cart3, cart4],
+    [cart1, cart2, cart3, cart4],
+  ];
+  let arrXs = [
+    [cart1, cart2],
+    [cart3, cart4],
+  ];
 
   return (
-    <div className='slider-over'>
-      <div className='over-header'>
-        <span>New arrivals</span>
-        <span>Best Sellers</span>
-        <span>Popular</span>
-      </div>
-      <div className='slide--o'>
+    <Grid item container xs={12} spacing={2}>
+      <Grid item container xs={12} spacing={3}>
+        <Grid item xs={4} sm={4}>
+          <span className='over-header'>New arrivals</span>
+        </Grid>
+        <Grid item xs={4} sm={4}>
+          <span className='over-header'>Best Sellers</span>
+        </Grid>
+        <Grid item xs={4} sm={4}>
+          <span className='over-header'>Popular</span>
+        </Grid>
+      </Grid>
+      <Grid className={classes.gridOverflowHidden} item xs={12}>
         <Carousel
-          timeout={1000}
-          timer={1000}
+          timeout={600}
+          timer={600}
           autoPlay={false}
           indicators={true}
-          animation='slide'
-          navButtonsAlwaysVisible={true}
+          animation={match ? "fade" : "slide"}
+          navButtonsAlwaysVisible={false}
         >
-          {arrG.map(function (x) {
-            return (
-              <Grid key={x} container spacing={2}>
-                {carts.map((slide, index) => {
-                  return (
-                    <Grid item xs={3} key={index}>
-                      <div className='panel-cart'>
-                        <img src={slide} alt='Printed Chiffon Dress' />
-                      </div>
-                      <div>
-                        <div className='panel-cost-text tipical'>
-                          Printed Chiffon Dress
-                        </div>
-                        <div className='cost-text'>
-                          <div className='cost-text-cost'>
-                            <span className='tipical'>£ 61.19</span>
-                            <Rating
-                              name='half-rating'
-                              placeholder='Моя оценка'
-                              defaultValue={2.5}
-                              precision={0.5}
-                            />
+          {match
+            ? arrXs.map(function (x, i) {
+                return (
+                  <Grid key={"arrSm" + i} item container xs={12} spacing={2}>
+                    {x.map((slide, index) => {
+                      return (
+                        <Grid item xs={6} key={index}>
+                          <div className='panel-cart'>
+                            <img src={slide} alt='Printed Chiffon Dress' />
                           </div>
-                          <Button
-                            className={classes.addToCardButton}
-                            variant='contained'
-                          >
-                            Add to cart
-                          </Button>
-                        </div>
-                      </div>
-                    </Grid>
-                  );
-                })}
-              </Grid>
-            );
-          })}
+                          <div>
+                            <div className='panel-cost-text tipical'>
+                              Printed Chiffon Dress
+                            </div>
+                            <div className='cost-text'>
+                              <div className='cost-text-cost'>
+                                <span className='tipical'>£ 61.19</span>
+                                <Rating
+                                  className={classes.themeSpacing}
+                                  name='half-rating'
+                                  placeholder='Моя оценка'
+                                  defaultValue={2.5}
+                                  precision={0.5}
+                                />
+                              </div>
+                              <Button
+                                className={classes.addToCardButton}
+                                variant='contained'
+                              >
+                                Add to cart
+                              </Button>
+                            </div>
+                          </div>
+                        </Grid>
+                      );
+                    })}
+                  </Grid>
+                );
+              })
+            : arrMd.map(function (x, i) {
+                return (
+                  <Grid key={"arrMd" + x} item container xs={12} spacing={2}>
+                    {x.map((slide, index) => {
+                      return (
+                        <Grid item xs={3} key={index}>
+                          <div className='panel-cart'>
+                            <img src={slide} alt='Printed Chiffon Dress' />
+                          </div>
+                          <div>
+                            <div className='panel-cost-text tipical'>
+                              Printed Chiffon Dress
+                            </div>
+                            <div className='cost-text'>
+                              <div className='cost-text-cost'>
+                                <span className='tipical'>£ 61.19</span>
+                                <Rating
+                                  className={classes.themeSpacing}
+                                  name='half-rating'
+                                  placeholder='Моя оценка'
+                                  defaultValue={2.5}
+                                  precision={0.5}
+                                />
+                              </div>
+                              <Button
+                                className={classes.addToCardButton}
+                                variant='contained'
+                              >
+                                Add to cart
+                              </Button>
+                            </div>
+                          </div>
+                        </Grid>
+                      );
+                    })}
+                  </Grid>
+                );
+              })}
         </Carousel>
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   );
 };
 
 export default OverSlider;
-export let overCarts = [cart1, cart2, cart3, cart4];
