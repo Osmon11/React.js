@@ -1,17 +1,17 @@
-import * as firebase from 'firebase/app';
-import 'firebase/storage';
-import 'firebase/firestore';
-import 'firebase/auth';
+import * as firebase from "firebase/app";
+import "firebase/storage";
+import "firebase/firestore";
+import "firebase/auth";
 
 let Config = {
-  apiKey: "AIzaSyBvNjDynKzkhuKmdYTSrSCcu-iwu4Wg4SM",
-  authDomain: "field-of-dreams-3b1c5.firebaseapp.com",
-  databaseURL: "https://field-of-dreams-3b1c5.firebaseio.com",
-  projectId: "field-of-dreams-3b1c5",
-  storageBucket: "field-of-dreams-3b1c5.appspot.com",
-  messagingSenderId: "784334289049",
-  appId: "1:784334289049:web:027b4d6bcf7c44f8e4e008",
-  measurementId: "G-WDFM9KCM95"
+  apiKey: "AIzaSyBoCaAwwr3NpnV2BLRmEQqjggf4050E98w",
+  authDomain: "feildofdreams-a7ade.firebaseapp.com",
+  databaseURL: "https://feildofdreams-a7ade.firebaseio.com",
+  projectId: "feildofdreams-a7ade",
+  storageBucket: "feildofdreams-a7ade.appspot.com",
+  messagingSenderId: "185723527093",
+  appId: "1:185723527093:web:4f5151e621c1d28a75c3fc",
+  measurementId: "G-DT62CB6ERN",
 };
 
 const base = firebase.initializeApp(Config);
