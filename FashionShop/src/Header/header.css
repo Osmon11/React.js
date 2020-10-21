@@ -338,6 +338,8 @@ a {
 #roof_icon {
   width: auto;
   height: auto;
+  max-width: 19px;
+  max-height: 17px;
 }
 .nav_logo {
   height: 50px;
@@ -368,6 +370,8 @@ a {
 }
 .n_icon {
   width: 10%;
+  max-width: 37px;
+  max-width: 37px;
   cursor: pointer;
 }
 .n_icon img {
@@ -415,7 +419,8 @@ a {
   cursor: pointer;
 }
 #telly_icon {
-  width: 8px;
+  max-width: 12px;
+  max-height: 11px;
 }
 
 /* Keyframes */

@@ -31,7 +31,7 @@ export const searchGoods = (event) => {
   }
 };
 
-export function renderBasket(e) {
+export function showBasket(e) {
   if (e.target.closest(".container")) {
     e.target.closest(".container").classList.add("show");
   }
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = (props) => {
+const Header = React.memo(() => {
   let classes = useStyles();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -143,7 +143,6 @@ const Header = (props) => {
                 <button
                   type='submit'
                   className='search-btn'
-                  id='search-btn'
                   aria-label='Поиск товаров'
                 ></button>
               </div>
@@ -226,7 +225,7 @@ const Header = (props) => {
               </NavLink>
             </Grid>
             <Grid item xs={2} sm={2}>
-              <span className='shopping_cart tipicalL' onClick={renderBasket}>
+              <span className='shopping_cart tipicalL' onClick={showBasket}>
                 <img src={ltelly} id='telly_icon' alt='light telly icon' />{" "}
                 Shopping Cart (0)
               </span>
@@ -236,6 +235,6 @@ const Header = (props) => {
       </AppBar>
     </div>
   );
-};
+});
 
 export default Header;

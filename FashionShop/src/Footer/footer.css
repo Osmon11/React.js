@@ -34,8 +34,8 @@
 .fashion-text {
   font-size: 11px;
   text-align: start;
-  color: #808080;
-  font-family: 'Gotham - Book';
+  color: #696969;
+  font-family: "Gotham - Book";
   font-weight: 400;
 }
 .sing-up {
@@ -55,22 +55,28 @@
 .f-info {
   display: flex;
 }
-.information, .customer, .store {
+.information,
+.customer,
+.store {
   width: 33%;
   padding-top: 15px;
 }
-.information span, .customer span, .store span {
+.information span,
+.customer span,
+.store span {
   font-size: 13px;
-  color: #808080;
-  font-family: 'Gotham - Book';
+  color: #696969;
+  font-family: "Gotham - Book";
   font-weight: 400;
   text-transform: uppercase;
 }
-.information ul li, .customer ul li, .store ul li {
+.information ul li,
+.customer ul li,
+.store ul li {
   padding-top: 10px;
-  color: #808080;
+  color: #696969;
   font-size: 11px;
-  font-family: 'Gotham';
+  font-family: "Gotham";
   font-weight: 300;
 }
 ul li img {
@@ -81,26 +87,30 @@ ul li img {
   width: 8px;
 }
 .f-end {
-  color: #808080;
+  color: #696969;
   text-align: center;
-  font-family: 'Gotham - Book';
+  font-family: "Gotham - Book";
   font-size: 10px;
   font-weight: 400;
   padding: 30px;
 }
 
 @media (max-width: 1000px) {
-  .footer{
+  .footer {
     padding: 1rem;
   }
 }
 @media (max-width: 950px) {
-  .information span, .customer span, .store span {
+  .information span,
+  .customer span,
+  .store span {
     text-transform: lowercase;
   }
 }
 @media (max-width: 710px) {
-  .information span, .customer span, .store span {
+  .information span,
+  .customer span,
+  .store span {
     font-size: 12px;
   }
 }
@@ -110,19 +120,21 @@ ul li img {
     justify-content: center;
     align-items: center;
   }
-  .f-form, .f-fashion{
+  .f-form,
+  .f-fashion {
     width: 100%;
     margin-left: 0;
   }
 }
 @media (max-width: 430px) {
-  .f-info{
+  .f-info {
     flex-wrap: wrap;
   }
-  .information, .customer {
+  .information,
+  .customer {
     width: 50%;
   }
-  .store{
+  .store {
     width: 100%;
     text-align: center;
   }

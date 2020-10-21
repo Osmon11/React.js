@@ -3,7 +3,7 @@ import clsx from "clsx";
 import "./res.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { NavLink } from "react-router-dom";
-import { renderBasket } from "../Header/header";
+import { showBasket } from "../Header/header";
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -108,7 +108,7 @@ function searchGoods(e) {
   }
 }
 
-export default function ResHeader() {
+const ResHeader = React.memo(() => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const icons = [
@@ -224,7 +224,7 @@ export default function ResHeader() {
         </List>
         <Divider />
         <List>
-          <ListItem button onClick={renderBasket}>
+          <ListItem button onClick={showBasket}>
             <ListItemIcon>
               <ShoppingCartIcon />
             </ListItemIcon>
@@ -295,4 +295,6 @@ export default function ResHeader() {
       </Drawer>
     </div>
   );
-}
+});
+
+export default ResHeader;
