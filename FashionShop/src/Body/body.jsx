@@ -26,6 +26,28 @@ export const useStyles = makeStyles((theme) => ({
     width: 100 + "%",
     height: 100 + "%",
   },
+  addToCardButton: {
+    backgroundColor: "#db3838",
+    color: "#ffffff",
+    cursor: "pointer",
+    zIndex: 100,
+    "&:hover": {
+      backgroundColor: "#05c005",
+      transform: "scale(1.1)",
+    },
+    "&:focus": {
+      backgroundColor: "#db3830",
+      transform: "scale(1.1)",
+    },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "13px",
+      padding: "6px 10px",
+    },
+    [theme.breakpoints.down("870")]: {
+      fontSize: "12px",
+      padding: "5",
+    },
+  },
   readMoreButton: {
     backgroundColor: "#db3838",
     color: "#ffffff",
@@ -53,6 +75,9 @@ export const useStyles = makeStyles((theme) => ({
       padding: "6px 10px",
       textTransform: "uppercase",
     },
+  },
+  gridOverflowHidden: {
+    overflow: "hidden",
   },
 }));
 

@@ -1,6 +1,5 @@
 import React, { useCallback } from "react";
 import { withRouter } from "react-router-dom";
-import Particles from "react-particles-js";
 import base from "./config";
 import space from "../../img/image1.jpg";
 import "./login.css";
@@ -25,41 +24,6 @@ const AdminSingup = ({ history }) => {
   return (
     <>
       <img className='bg_space' src={space} alt='space' />
-      <Particles
-        className='particles-singup'
-        params={{
-          particles: {
-            number: {
-              value: 90,
-              density: {
-                enable: true,
-                value_area: 800,
-              },
-            },
-            lineLinked: {
-              enable: true,
-              distance: 100,
-              color: "#ffffff",
-            },
-            size: {
-              value: 2,
-              random: false,
-            },
-            opacity: {
-              value: 0.5,
-              random: true,
-            },
-          },
-          interactivity: {
-            events: {
-              onClick: {
-                enable: true,
-                mode: "push",
-              },
-            },
-          },
-        }}
-      />
       <form
         className='box'
         onSubmit={handleSingup}

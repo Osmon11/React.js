@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import Particles from "react-particles-js";
 import "./header.css";
 import telly from "../img/telly.png";
 import ltelly from "../img/white-telly.png";
@@ -15,27 +14,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import { Grid, Menu, MenuItem } from "@material-ui/core";
-
-let inputValue = React.createRef();
-export const searchGoods = (event) => {
-  event.preventDefault();
-  let ePersist = event.target;
-
-  if (inputValue.current.value.length > 0) {
-    console.log(inputValue.carent.value);
-  } else {
-    ePersist.closest(".search").classList.add("error");
-    setTimeout(() => {
-      ePersist.closest(".search").classList.remove("error");
-    }, 2000);
-  }
-};
-
-export function showBasket(e) {
-  if (e.target.closest(".container")) {
-    e.target.closest(".container").classList.add("show");
-  }
-}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -79,24 +57,16 @@ const Header = React.memo(() => {
         <Toolbar className={classes.appBarRoot}>
           <div className='roof'>
             <Grid container>
-              <Grid item xs={4}>
-                <div className='roof3'>
-                  <img id='roof_icon' alt='telly icon' src={telly} />
-                  <span id='roof2'>Free shipping ON all order</span>
-                </div>
-              </Grid>
-              <Grid item xs={4}>
-                <div className='center'>
-                  <img id='roof_icon' alt='dollar icon' src={dollar} />
-                  <span id='roof2'>100% MONEY BACK</span>
-                </div>
-              </Grid>
-              <Grid item xs={4}>
-                <div className='roof3'>
-                  <img id='roof_icon' alt='clock icon' src={clock} />
-                  <span id='roof2'>ONLINE SUPPORT 24/7</span>
-                </div>
-              </Grid>
+              {arrAppBar3.map((x, i) => {
+                return (
+                  <Grid key={x.alt + i} item xs={4}>
+                    <div className={x.class}>
+                      <img id='roof_icon' alt={x.alt} src={x.icon} />
+                      <span id='roof2'>{x.name}</span>
+                    </div>
+                  </Grid>
+                );
+              })}
             </Grid>
           </div>
         </Toolbar>
@@ -148,82 +118,31 @@ const Header = React.memo(() => {
               </div>
             </div>
             <div className='nav_icons'>
-              <span className='n_icon'>
-                <Link to='*'>
-                  <img src={facebook} alt='facebook icon' />
-                </Link>
-              </span>
-              <span className='n_icon'>
-                <Link to='*'>
-                  <img src={twitter} alt='twitter icon' />
-                </Link>
-              </span>
-              <span className='n_icon'>
-                <Link to='*'>
-                  <img src={instagram} alt='instagram icon' />
-                </Link>
-              </span>
-              <span className='n_icon'>
-                <Link to='*'>
-                  <img src={youtube} alt='youtube icon' />
-                </Link>
-              </span>
+              {arrAppBar2.map((x, i) => {
+                return (
+                  <span key={x.path + i + "icon"} className='n_icon'>
+                    <Link to={x.path}>
+                      <img src={x.name} alt='facebook icon' />
+                    </Link>
+                  </span>
+                );
+              })}
             </div>
           </div>
         </Toolbar>
       </AppBar>
-
       <AppBar className={classes.appBarRoot3} position='static'>
         <Toolbar>
-          <Particles
-            className='particles-header'
-            params={{
-              particles: {
-                number: {
-                  value: 200,
-                  density: {
-                    enable: true,
-                    value_area: 800,
-                  },
-                },
-                lineLinked: {
-                  enable: true,
-                  distance: 100,
-                  color: "#ffffff",
-                },
-                size: {
-                  value: 1.5,
-                  random: false,
-                },
-              },
-            }}
-          />
           <Grid container>
-            <Grid item xs={2} sm={2}>
-              <NavLink className='nav_text' to='/login'>
-                <div className='nav tipicalL'>Home</div>
-              </NavLink>
-            </Grid>
-            <Grid item xs={2} sm={2}>
-              <NavLink className='nav_text' to='/shop'>
-                <div className='nav tipicalL'>Shop</div>
-              </NavLink>
-            </Grid>
-            <Grid item xs={2} sm={2}>
-              <NavLink className='nav_text' to='/features'>
-                <div className='nav tipicalL'>Features</div>
-              </NavLink>
-            </Grid>
-            <Grid item xs={2} sm={2}>
-              <NavLink className='nav_text' to='/about'>
-                <div className='nav tipicalL'>About</div>
-              </NavLink>
-            </Grid>
-            <Grid item xs={2} sm={2}>
-              <NavLink className='nav_text' to='/contact'>
-                <div className='nav tipicalL'>Contact</div>
-              </NavLink>
-            </Grid>
+            {arrAppBar1.map((x, i) => {
+              return (
+                <Grid key={x.name + i} item xs={2} sm={2}>
+                  <NavLink className='nav_text' to={x.path}>
+                    <div className='nav tipicalL'>{x.name}</div>
+                  </NavLink>
+                </Grid>
+              );
+            })}
             <Grid item xs={2} sm={2}>
               <span className='shopping_cart tipicalL' onClick={showBasket}>
                 <img src={ltelly} id='telly_icon' alt='light telly icon' />{" "}
@@ -238,3 +157,58 @@ const Header = React.memo(() => {
 });
 
 export default Header;
+
+let inputValue = React.createRef();
+export const searchGoods = (event) => {
+  event.preventDefault();
+  let ePersist = event.target;
+
+  if (inputValue.current.value.length > 0) {
+    console.log(inputValue.carent.value);
+  } else {
+    ePersist.closest(".search").classList.add("error");
+    setTimeout(() => {
+      ePersist.closest(".search").classList.remove("error");
+    }, 2000);
+  }
+};
+
+export function showBasket(e) {
+  if (e.target.closest(".container")) {
+    e.target.closest(".container").classList.add("show");
+  }
+}
+
+const arrAppBar1 = [
+  { path: "/login", name: "Home" },
+  { path: "/shop", name: "Shop" },
+  { path: "/features", name: "Features" },
+  { path: "/about", name: "About" },
+  { path: "/Contact", name: "Contact" },
+];
+const arrAppBar2 = [
+  { path: "*", name: facebook },
+  { path: "*", name: twitter },
+  { path: "*", name: instagram },
+  { path: "*", name: youtube },
+];
+const arrAppBar3 = [
+  {
+    class: "roof3",
+    icon: telly,
+    alt: " telly icon",
+    name: "Free shipping ON all order",
+  },
+  {
+    class: "center",
+    icon: dollar,
+    alt: " dollar icon",
+    name: "100% MONEY BACK",
+  },
+  {
+    class: "roof3",
+    icon: clock,
+    alt: " clock icon",
+    name: "ONLINE SUPPORT 24/7",
+  },
+];

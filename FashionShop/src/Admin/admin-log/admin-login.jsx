@@ -2,7 +2,6 @@ import React, { useCallback, useState, useRef } from "react";
 import { withRouter } from "react-router-dom";
 import base from "./config";
 import "./login.css";
-import Particles from "react-particles-js";
 import { Alert, AlertTitle } from "@material-ui/lab";
 import IconButton from "@material-ui/core/IconButton";
 import Collapse from "@material-ui/core/Collapse";
@@ -51,44 +50,6 @@ const Login = ({ history }) => {
           </strong>
         </Alert>
       </Collapse>
-      <Particles
-        className='particles-login'
-        params={{
-          particles: {
-            number: {
-              value: 400,
-              density: {
-                enable: true,
-                value_area: 800,
-              },
-            },
-            color: {
-              value: "#505050",
-            },
-            lineLinked: {
-              enable: true,
-              distance: 70,
-              color: "#414141",
-            },
-            size: {
-              value: 2,
-              random: false,
-            },
-            opacity: {
-              value: 1,
-              random: false,
-            },
-          },
-          interactivity: {
-            events: {
-              onHover: {
-                enable: true,
-                mode: "grab",
-              },
-            },
-          },
-        }}
-      />
       <form
         className='boxL'
         onSubmit={handleLogin}

@@ -7,38 +7,8 @@ import cart1 from "../img/Layer_423.png";
 import cart2 from "../img/Layer_425.png";
 import cart3 from "../img/Layer_424.png";
 import cart4 from "../img/Layer_426.png";
-import { Button, makeStyles, useMediaQuery, useTheme } from "@material-ui/core";
-
-const useStyles = makeStyles((theme) => ({
-  themeSpasing: {
-    padding: theme.spacing(1),
-  },
-  addToCardButton: {
-    backgroundColor: "#db3838",
-    color: "#ffffff",
-    cursor: "pointer",
-    zIndex: 100,
-    "&:hover": {
-      backgroundColor: "#05c005",
-      transform: "scale(1.1)",
-    },
-    "&:focus": {
-      backgroundColor: "#db3830",
-      transform: "scale(1.1)",
-    },
-    [theme.breakpoints.down("md")]: {
-      fontSize: "13px",
-      padding: "6px 10px",
-    },
-    [theme.breakpoints.down("870")]: {
-      fontSize: "12px",
-      padding: "5",
-    },
-  },
-  gridOverflowHidden: {
-    overflow: "hidden",
-  },
-}));
+import { Button, useMediaQuery, useTheme } from "@material-ui/core";
+import useStyles from "./body";
 
 const OverSlider = () => {
   const classes = useStyles();
