@@ -1,8 +1,8 @@
 import React from "react";
 import "./body.css";
-import blog1 from "../img/Layer_420.png";
-import blog2 from "../img/Layer_421.png";
-import blog3 from "../img/Layer_422.png";
+import blog1 from "../img/Layer_420.webp";
+import blog2 from "../img/Layer_421.webp";
+import blog3 from "../img/Layer_422.webp";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles, Paper } from "@material-ui/core";
 

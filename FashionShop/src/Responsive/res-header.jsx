@@ -27,10 +27,10 @@ import BookIcon from "@material-ui/icons/Book";
 import ContactsIcon from "@material-ui/icons/Contacts";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import logo from "../img/Store.png";
-import facebook from "../img/facebook.png";
-import twitter from "../img/twitter.png";
-import instagram from "../img/intsagram.png";
-import youtube from "../img/youtube.png";
+import facebook from "../img/facebook.webp";
+import twitter from "../img/twitter.webp";
+import instagram from "../img/intsagram.webp";
+import youtube from "../img/youtube.webp";
 import Box from "@material-ui/core/Box";
 import { Button, Menu, MenuItem } from "@material-ui/core";
 

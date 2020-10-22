@@ -1,9 +1,9 @@
 import React from "react";
 import "./footer.css";
 import logo from "../img/Store.png";
-import location from "../img/lockation.png";
-import mail from "../img/mail.png";
-import phon from "../img/telephon.png";
+import location from "../img/lockation.webp";
+import mail from "../img/mail.webp";
+import phon from "../img/telephon.webp";
 import { searchGoods } from "../Header/header";
 import { Button, makeStyles, Menu, MenuItem } from "@material-ui/core";
 

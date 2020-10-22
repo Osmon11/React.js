@@ -170,7 +170,7 @@ a {
   display: flex;
   justify-content: center;
 }
-.cart .goods-add-wishlist {
+/* .cart .goods-add-wishlist {
   width: 32px;
   height: 32px;
   background-color: transparent;
@@ -180,7 +180,7 @@ a {
   text-align: center;
   line-height: 32px;
   border: none;
-}
+} */
 .cart .goods-add-wishlist.active {
   background-position: 4px -2633px;
 }
@@ -188,8 +188,8 @@ a {
   width: 32px;
   height: 32px;
   background-color: transparent;
-  background-image: url(../img/icons.png);
-  background-position: 8px -1865px;
+  background-image: url("../img/delete.webp");
+  background-position: center;
   border-radius: 50%;
   text-align: center;
   line-height: 32px;
@@ -284,8 +284,8 @@ a {
   width: 24px;
   height: 24px;
   color: #fff;
-  background-image: url(../img/icons.png);
-  background-position: -8px -1328px;
+  background-image: url("../img/d_search.webp");
+  background-position: center;
 }
 .search.error {
   -webkit-animation: 2s linear error;
@@ -343,7 +343,7 @@ a {
   width: 30%;
   height: 70px;
   background-color: #ffffff;
-  background-image: url(../img/Store.png);
+  background-image: url("../img/Store.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

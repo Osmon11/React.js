@@ -1,8 +1,32 @@
 import React from "react";
-import { Button, Grid } from "@material-ui/core";
+import { Button, Grid, makeStyles } from "@material-ui/core";
 import Carousel from "react-material-ui-carousel";
 import CustomRating from "./rating";
-import useStyles from "./body";
+
+const useStyles = makeStyles((theme) => ({
+  addToCardButton: {
+    backgroundColor: "#db3838",
+    color: "#ffffff",
+    cursor: "pointer",
+    zIndex: 100,
+    "&:hover": {
+      backgroundColor: "#05c005",
+      transform: "scale(1.1)",
+    },
+    "&:focus": {
+      backgroundColor: "#db3830",
+      transform: "scale(1.1)",
+    },
+    [theme.breakpoints.down("md")]: {
+      fontSize: "13px",
+      padding: "6px 10px",
+    },
+    [theme.breakpoints.down("870")]: {
+      fontSize: "12px",
+      padding: "5",
+    },
+  },
+}));
 
 export default function Slider({ slides }) {
   const classes = useStyles();

@@ -10,6 +10,7 @@ import CloseIcon from "@material-ui/icons/Close";
 const Login = ({ history }) => {
   const [open, setOpen] = useState(false);
   let message = useRef({ message: "All right!" });
+  let colorStrong = { color: "#ce1126" };
   const handleLogin = useCallback(
     async (e) => {
       e.preventDefault();
@@ -45,9 +46,7 @@ const Login = ({ history }) => {
           }
         >
           <AlertTitle>Error</AlertTitle>
-          <strong style={{ color: "#ce1126" }}>
-            {message.current.message}
-          </strong>
+          <strong style={colorStrong}>{message.current.message}</strong>
         </Alert>
       </Collapse>
       <form

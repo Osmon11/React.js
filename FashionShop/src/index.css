@@ -21,7 +21,7 @@ code {
 .error404 {
   min-height: 100vh;
   min-width: 100%;
-  background-image: url("./img/404.gif");
+  background-image: url("./img/404.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

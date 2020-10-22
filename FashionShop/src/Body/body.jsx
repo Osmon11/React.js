@@ -1,9 +1,9 @@
 import React from "react";
 import "./body.css";
-import women1 from "../img/Layer_430.png";
-import women2 from "../img/Layer_428.png";
-import women3 from "../img/Layer_429.png";
-import formen from "../img/Layer_415.png";
+import women1 from "../img/Layer_430.webp";
+import women2 from "../img/Layer_428.webp";
+import women3 from "../img/Layer_429.webp";
+import formen from "../img/Layer_415.webp";
 import { NavLink } from "react-router-dom";
 import OverSlider from "./overSlider";
 import FromBlog from "./fromBlog";
@@ -11,13 +11,13 @@ import Grid from "@material-ui/core/Grid";
 import ActiveLastBreadcrumb from "../Responsive/res-bread-crumbs";
 import { Button, makeStyles, Paper } from "@material-ui/core";
 import Slider from "./Slider";
-import Mcart1 from "../img/Layer_413.png";
-import Mcart2 from "../img/Layer_414.png";
-import Wcart1 from "../img/Layer_418.png";
-import Wcart2 from "../img/Layer_417.png";
-import forwomen from "../img/Layer_416.png";
+import Mcart1 from "../img/Layer_413.webp";
+import Mcart2 from "../img/Layer_414.webp";
+import forwomen from "../img/Layer_416.webp";
+import Wcart1 from "../img/Layer_418.webp";
+import Wcart2 from "../img/Layer_417.webp";
 
-export const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({
   themeSpasing: {
     padding: theme.spacing(1),
   },
@@ -25,28 +25,6 @@ export const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
     width: 100 + "%",
     height: 100 + "%",
-  },
-  addToCardButton: {
-    backgroundColor: "#db3838",
-    color: "#ffffff",
-    cursor: "pointer",
-    zIndex: 100,
-    "&:hover": {
-      backgroundColor: "#05c005",
-      transform: "scale(1.1)",
-    },
-    "&:focus": {
-      backgroundColor: "#db3830",
-      transform: "scale(1.1)",
-    },
-    [theme.breakpoints.down("md")]: {
-      fontSize: "13px",
-      padding: "6px 10px",
-    },
-    [theme.breakpoints.down("870")]: {
-      fontSize: "12px",
-      padding: "5",
-    },
   },
   readMoreButton: {
     backgroundColor: "#db3838",
@@ -75,9 +53,6 @@ export const useStyles = makeStyles((theme) => ({
       padding: "6px 10px",
       textTransform: "uppercase",
     },
-  },
-  gridOverflowHidden: {
-    overflow: "hidden",
   },
 }));
 

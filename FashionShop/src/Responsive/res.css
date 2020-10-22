@@ -36,7 +36,8 @@
   text-transform: uppercase;
   letter-spacing: 1.35px;
 }
-.res-nav:hover, .mobile .res-nav:focus {
+.res-nav:hover,
+.mobile .res-nav:focus {
   border-bottom: 3px solid #db3838;
 }
 @media all and (max-width: 700px) {
