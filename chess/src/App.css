@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(34, 34, 34);
+}
+.boardContainer {
+  width: 600px;
+  height: 600px;
+}
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  transition: all 1s;
+}
+.boardRotate,
+.autoTurn .blackPiece {
+  transform: rotate(180deg);
+}
+.square {
+  width: 12.5%;
+  height: 12.5%;
+}
+.squareBlack {
+  background-color: #b59963;
+}
+.squareWhite {
+  background-color: #f0d9b5;
+}
+.board,
+.boardSquare,
+.pieceContaier {
+  width: 100%;
+  height: 100%;
+}
+.pieceContaier {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pieceContaier {
+  cursor: grab;
+}
+.piece {
+  max-width: 70%;
+  max-height: 70%;
+}
+
+/* Controller */
+
+.controller {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10%;
+}
+.controller div {
+  color: #fff;
+  padding: 0 10px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: large;
+}
+.controller label {
+  position: relative;
+  padding: 5px 0;
+  cursor: pointer;
+}
+.controller label input {
+  appearance: none;
+  display: none;
+}
+.controller label span {
+  position: relative;
+  display: block;
+  width: 80px;
+  height: 40px;
+  background: #222;
+  border-radius: 40px;
+  box-shadow: inset 0 2px 15px rgba(0, 0, 0, 0.2),
+    inset 0 2px 2px rgba(0, 0, 0, 0.2), inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+}
+.controller label .indicator {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(to bottom, #444, #222);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+  transform: scale(0.9);
+}
+.controller label input:checked ~ .indicator {
+  left: 40px;
+}
+.controller label .indicator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #f00;
+  box-shadow: 0 0 2px #f00, 0 0 5px #f00, 0 0 10px #f00, 0 0 15px #f00,
+    0 0 20px #f00, 0 0 25px #f00, 0 0 30px #f00, 0 0 40px #f00;
+}
+.controller label input:checked ~ .indicator::before {
+  background: #0f0;
+  box-shadow: 0 0 2px #0f0, 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0,
+    0 0 20px #0f0, 0 0 25px #0f0, 0 0 30px #0f0, 0 0 40px #0f0;
+}
+
+.controller .info .indicator::before {
+  background: #fff;
+  box-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff,
+    0 0 20px #fff, 0 0 25px #fff, 0 0 30px #fff, 0 0 40px #fff;
+}
+.controller .info input:checked ~ .indicator::before {
+  background: #000;
+  box-shadow: 0 0 2px #000, 0 0 5px #000, 0 0 10px #000, 0 0 15px #000,
+    0 0 20px #000, 0 0 25px #000, 0 0 30px #000, 0 0 40px #000;
+}
+
+/* Dialog */
+
+.dialog {
+  position: fixed;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.dialog,
+.dialog__overlay {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.dialog__overlay {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.dialog.dialog--open .dialog__content {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.dialog.dialog--open .dialog__content {
+  -webkit-animation-name: anim-open;
+  animation-name: anim-open;
+  -webkit-animation-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
+  animation-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
+}
+
+.dialog__overlay {
+  position: absolute;
+  z-index: 1;
+  background: rgba(55, 58, 71, 0.9);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  -webkit-backface-visibility: hidden;
+}
+
+.dialog--open .dialog__overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dialog__content {
+  width: 50%;
+  max-width: 600px;
+  min-width: 290px;
+  background: #fff;
+  padding: 2em;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  opacity: 0;
+}
+
+.dialog--open .dialog__content {
+  pointer-events: auto;
+}
+
+/* Content */
+.dialog h2 {
+  margin: 0;
+  font-weight: 400;
+  padding-bottom: 10px;
+  margin: 0;
+}
+.dialog__content .board {
+  width: 100%;
+  justify-content: space-between;
+}
+.promoteSquare {
+  width: 20%;
+}
+.promoteSquare:hover {
+  transform: scale(0.9);
+  border: 2px solid #0f0;
+}
+.text-gameover {
+  text-orientation: upright;
+  color: #fff;
+  padding-bottom: 10px;
+  font-family: sans-serif;
+}
+.dialog button {
+  margin-top: 20px;
+  cursor: pointer;
+  background: rgb(63, 63, 63);
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
+@-webkit-keyframes anim-open {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0, 0, 1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes anim-open {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0, 0, 1);
+    transform: scale3d(0, 0, 1);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@media (max-width: 970px) {
+  .controller {
+    flex-direction: column;
+    left: 5px;
+  }
+}
+@media (max-width: 800px) {
+  .controller {
+    width: 100%;
+    flex-direction: row;
+  }
+  .boardContainer {
+    margin-top: 75px;
+  }
+}
