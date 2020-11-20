@@ -1,0 +1,5 @@
+type OseMVC {
+  todoId: ID!
+  completed: Boolean!
+  description: String!
+}
