@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /#
+Allow: /formen
+Allow: /forwomen
+Allow: /forkids
+Disallow: /admin-cs30
+Disallow: /admin-cs30/singup-master
+Disallow: /admin-cs30/sales
+Disallow: /admin-cs30/finance
+Disallow: /admin-cs30/goods&list
+Disallow: /admin-cs30/news
+Disallow: /admin-cs30/goods&list/add_goods
