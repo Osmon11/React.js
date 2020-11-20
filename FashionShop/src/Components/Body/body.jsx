@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 import OverSlider from "./overSlider";
 import FromBlog from "./fromBlog";
 import Grid from "@material-ui/core/Grid";
-import ActiveLastBreadcrumb from "../Responsive/res-bread-crumbs";
+import ActiveLastBreadcrumb from "../../Responsive/res-bread-crumbs";
 import { Button, makeStyles, Paper } from "@material-ui/core";
 import Slider from "./Slider";
 import Mcart1 from "../img/Layer_413.webp";

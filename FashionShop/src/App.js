@@ -1,6 +1,6 @@
 import React, { Component, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import PrivateRoute from "./Admin/admin-log/privateRoute";
+import PrivateRoute from "./Components/Admin/admin-log/privateRoute";
 import {
   Backdrop,
   CircularProgress,
@@ -8,12 +8,14 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import Page404 from "./404";
-import "./Header/header.css";
+import "./Components/Header/header.css";
 import "./index.css";
-const Public = lazy(() => import("./Public"));
-const Admin = lazy(() => import("./Admin/admin"));
-const Login = lazy(() => import("./Admin/admin-log/admin-login"));
-const AdminSingup = lazy(() => import("./Admin/admin-log/admin-singup"));
+const Public = lazy(() => import("./Pages/Public"));
+const Admin = lazy(() => import("./Components/Admin/admin"));
+const Login = lazy(() => import("./Components/Admin/admin-log/admin-login"));
+const AdminSingup = lazy(() =>
+  import("./Components/Admin/admin-log/admin-singup")
+);
 
 class App extends Component {
   constructor(props) {

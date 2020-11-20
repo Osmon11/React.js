@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import './carousel.css';
-import classNames from 'classnames';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import "./carousel.css";
+import classNames from "classnames";
+import { connect } from "react-redux";
 
 class Carousel extends Component {
   state = {};
@@ -17,20 +17,18 @@ class Carousel extends Component {
   }
 
   componentDidMount() {
-    let _this2 = this;
     this.slider();
     this.runAutochangeTO();
     setTimeout(function () {
-      _this2.setState({ activeSlide: 0, sliderReady: true });
+      this.setState({ activeSlide: 0, sliderReady: true });
     }, 10000);
   }
 
   runAutochangeTO() {
-    let _this3 = this;
     this.setState({
       changeTO: setTimeout(function () {
-        _this3.changeSlides(1);
-        _this3.runAutochangeTO();
+        this.changeSlides(1);
+        this.runAutochangeTO();
       }, this.state.AUTOCHANGE_TIME),
     });
   }
@@ -46,46 +44,45 @@ class Carousel extends Component {
   }
 
   render() {
-    let _this4 = this;
     let _state = this.state;
     let activeSlide = _state.activeSlide;
     let prevSlide = _state.prevSlide;
     let sliderReady = _state.sliderReady;
 
     return (
-      <div className={classNames({ 's--ready': sliderReady }, 'slider')}>
-        <div className="slider__slides">
+      <div className={classNames({ "s--ready": sliderReady }, "slider")}>
+        <div className='slider__slides'>
           {this.props.slides.map(function (slide, index) {
             return (
               <div
-                className={classNames('slider__slide', {
-                  's--active': activeSlide === index,
-                  's--prev': prevSlide === index,
+                className={classNames("slider__slide", {
+                  "s--active": activeSlide === index,
+                  "s--prev": prevSlide === index,
                 })}
                 key={slide.city}
               >
-                <div className="slider__slide-content">
-                  <h3 className="slider__slide-subheading">
-                    {' '}
+                <div className='slider__slide-content'>
+                  <h3 className='slider__slide-subheading'>
+                    {" "}
                     {slide.country || slide.city}
                   </h3>
-                  <h2 className="slider__slide-heading">
-                    {slide.city.split('').map(function (l, i) {
+                  <h2 className='slider__slide-heading'>
+                    {slide.city.split("").map(function (l, i) {
                       return <span key={l + i}> {l} </span>;
                     })}
                   </h2>
-                  <p className="slider__slide-readmore">Men & women</p>
+                  <p className='slider__slide-readmore'>Men & women</p>
                 </div>
-                <div className="slider__slide-parts">
+                <div className='slider__slide-parts'>
                   {[]
                     .concat(Array(_state.IMAGE_PARTS).fill())
                     .map(function (x, i) {
                       return (
-                        <div className="slider__slide-part" key={i}>
+                        <div className='slider__slide-part' key={i}>
                           <div
-                            className="slider__slide-part-inner"
+                            className='slider__slide-part-inner'
                             style={{
-                              backgroundImage: 'url(' + slide.img + ')',
+                              backgroundImage: "url(" + slide.img + ")",
                             }}
                           ></div>
                         </div>
@@ -96,15 +93,15 @@ class Carousel extends Component {
             );
           })}
           <div
-            className="slider__control"
+            className='slider__control'
             onClick={function onClick() {
-              return _this4.changeSlides(-1);
+              return this.changeSlides(-1);
             }}
           />
           <div
-            className="slider__control slider__control--right"
+            className='slider__control slider__control--right'
             onClick={function onClick() {
-              return _this4.changeSlides(1);
+              return this.changeSlides(1);
             }}
           />
         </div>
