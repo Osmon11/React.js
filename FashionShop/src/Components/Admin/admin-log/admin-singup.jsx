@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { withRouter } from "react-router-dom";
 import base from "./config";
-import space from "../../img/image1.webp";
+import space from "../../../Assets/img/image1.webp";
 import "./login.css";
 
 const AdminSingup = ({ history }) => {

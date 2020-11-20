@@ -2,8 +2,8 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import mini from "../img/d_mini.webp";
-import "./dushboard.css";
+import mini from "../../Assets/img/d_mini.webp";
+import "./dushboard/dushboard.css";
 import { NavLink } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 

@@ -1,9 +1,9 @@
 import React from "react";
 import "./body.css";
-import women1 from "../img/Layer_430.webp";
-import women2 from "../img/Layer_428.webp";
-import women3 from "../img/Layer_429.webp";
-import formen from "../img/Layer_415.webp";
+import women1 from "../../Assets/img/Layer_430.webp";
+import women2 from "../../Assets/img/Layer_428.webp";
+import women3 from "../../Assets/img/Layer_429.webp";
+import formen from "../../Assets/img/Layer_415.webp";
 import { NavLink } from "react-router-dom";
 import OverSlider from "./overSlider";
 import FromBlog from "./fromBlog";
@@ -11,11 +11,11 @@ import Grid from "@material-ui/core/Grid";
 import ActiveLastBreadcrumb from "../Responsive/res-bread-crumbs";
 import { Button, makeStyles, Paper } from "@material-ui/core";
 import Slider from "./Slider";
-import Mcart1 from "../img/Layer_413.webp";
-import Mcart2 from "../img/Layer_414.webp";
-import forwomen from "../img/Layer_416.webp";
-import Wcart1 from "../img/Layer_418.webp";
-import Wcart2 from "../img/Layer_417.webp";
+import Mcart1 from "../../Assets/img/Layer_413.webp";
+import Mcart2 from "../../Assets/img/Layer_414.webp";
+import forwomen from "../../Assets/img/Layer_416.webp";
+import Wcart1 from "../../Assets/img/Layer_418.webp";
+import Wcart2 from "../../Assets/img/Layer_417.webp";
 
 const useStyles = makeStyles((theme) => ({
   themeSpasing: {

@@ -3,10 +3,10 @@ import "./body.css";
 import Rating from "@material-ui/lab/Rating";
 import Grid from "@material-ui/core/Grid";
 import Carousel from "react-material-ui-carousel";
-import cart1 from "../img/Layer_423.webp";
-import cart2 from "../img/Layer_425.webp";
-import cart3 from "../img/Layer_424.webp";
-import cart4 from "../img/Layer_426.webp";
+import cart1 from "../../Assets/img/Layer_423.webp";
+import cart2 from "../../Assets/img/Layer_425.webp";
+import cart3 from "../../Assets/img/Layer_424.webp";
+import cart4 from "../../Assets/img/Layer_426.webp";
 import { Button, makeStyles, useMediaQuery, useTheme } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({

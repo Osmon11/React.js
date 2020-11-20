@@ -1,8 +1,8 @@
-import paris from "../../img/singapore.webp";
-import singapore from "../../img/singapore.webp";
-import prague from "../../img/prague.webp";
-import amsterdam from "../../img/amsterdam.webp";
-import moscow from "../../img/moscow.webp";
+import paris from "../img/singapore.webp";
+import singapore from "../img/singapore.webp";
+import prague from "../img/prague.webp";
+import amsterdam from "../img/amsterdam.webp";
+import moscow from "../img/moscow.webp";
 
 export const initialState = {
   categories: ["For men", "For women", "For kids"],

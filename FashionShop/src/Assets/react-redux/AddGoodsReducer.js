@@ -1,29 +1,29 @@
-import { storage, store } from '../../Admin/admin-log/config';
-import { initialState } from './state';
+import { storage, store } from "../../Components/Admin/admin-log/config";
+import { initialState } from "./state";
 
 export const AddGoodsReducer = (state = initialState, action) => {
   let newGood = state.newGood;
   switch (action.type) {
-    case 'MODAL_ALERT':
+    case "MODAL_ALERT":
       console.log(action);
       return {
         ...state,
         modal: action.payload,
       };
-    case 'UPLOAD_IMG':
+    case "UPLOAD_IMG":
       let getUrl = async () => {
         storage
           .ref(`goodsImg/${action.payload.name}`)
           .put(action.payload)
           .on(
-            'state_changed',
+            "state_changed",
             (snapshot) => {
               console.log(snapshot);
             },
             (error) => {},
             () => {
               storage
-                .ref('goodsImg')
+                .ref("goodsImg")
                 .child(`${action.payload.name}`)
                 .getDownloadURL()
                 .then((newUrl) => {
@@ -39,16 +39,16 @@ export const AddGoodsReducer = (state = initialState, action) => {
           );
       };
       return getUrl;
-    case 'CREAT_GOOD':
+    case "CREAT_GOOD":
       return {
         ...state,
         newGood: action.payload,
       };
-    case 'ADD_GOOD':
+    case "ADD_GOOD":
       let myGoods = async () => {
         let good = action.payload;
         return await store
-          .collection('Categories')
+          .collection("Categories")
           .doc(good.category)
           .set(good);
       };
@@ -56,10 +56,10 @@ export const AddGoodsReducer = (state = initialState, action) => {
         ...state,
         myGoods: myGoods,
         newGood: {
-          title: '',
-          price: '',
-          description: '',
-          category: '',
+          title: "",
+          price: "",
+          description: "",
+          category: "",
         },
       };
     default:
