@@ -34,6 +34,7 @@ import BallotIcon from "@material-ui/icons/Ballot";
 import AddGoods from "./goods/AddGoods";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { Avatar } from "@material-ui/core";
 
 const clickHandler = (e) => {
   e.preventDefault();
@@ -227,7 +228,7 @@ const Admin = (props) => {
               </div>
               <div className='dush-menu for'>
                 <div className='dush-avatar for'>
-                  <img className='avatar-img' src={avaImg} alt='avatar img' />
+                  <Avatar alt='john doe' src={avaImg} />
                   <SimpleMenu />
                 </div>
                 <NavLink className='nav_text' to='/' onClick={handleLogout}>

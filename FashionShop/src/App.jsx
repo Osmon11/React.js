@@ -8,7 +8,6 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import Page404 from "./404";
-import "./Header/header.css";
 import "./index.css";
 const Public = lazy(() => import("./Pages/Public"));
 const Admin = lazy(() => import("./Components/Admin/admin"));

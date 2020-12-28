@@ -188,7 +188,7 @@ a {
   width: 32px;
   height: 32px;
   background-color: transparent;
-  background-image: url("../img/delete.webp");
+  background-image: url("../../Assets/img/delete.webp");
   background-position: center;
   border-radius: 50%;
   text-align: center;
@@ -284,7 +284,7 @@ a {
   width: 24px;
   height: 24px;
   color: #fff;
-  background-image: url("../img/d_search.webp");
+  background-image: url("../../Assets/img/d_search.webp");
   background-position: center;
 }
 .search.error {
@@ -298,28 +298,6 @@ a {
 .roof {
   width: 100%;
   height: 100%;
-}
-.roof3 {
-  text-align: center;
-}
-#roof2 {
-  width: 245px;
-  height: 8px;
-  opacity: 1;
-  color: #444444;
-  font-family: "Gotham - Book";
-  font-size: initial;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.35px;
-  margin-left: 5px;
-}
-.center {
-  padding-left: 10px;
-  padding-right: 10px;
-  border-left: 0.5px solid #cccaca;
-  border-right: 0.5px solid #cccaca;
-  text-align: center;
 }
 #roof_icon {
   width: auto;
@@ -342,8 +320,9 @@ a {
 .roof_search {
   width: 30%;
   height: 70px;
+  margin: 5px;
   background-color: #ffffff;
-  background-image: url("../img/Store.png");
+  background-image: url("../../Assets/img/Store.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -504,10 +483,22 @@ a {
 }
 @media screen and (min-width: 768px) {
   .nav {
-    font-size: 10px;
+    font-size: 12px;
   }
   .shopping_cart {
     font-size: 12px;
     padding: 12px 5px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav {
+    font-size: 10px;
+  }
+  .shopping_cart {
+    font-size: 10px;
+    padding: 12px 5px;
+  }
+  .roof_search {
+    height: 60px;
   }
 }

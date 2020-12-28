@@ -39,6 +39,7 @@ function getOption() {
       boundaryGap: [0, "100%"],
       axisLabel: {
         show: true,
+        formatter: "$ {value}",
       },
       axisLine: {
         show: false,

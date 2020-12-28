@@ -3,10 +3,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import "./dushboard.css";
-import expenses from "../img/expenses.webp";
-import taxes from "../img/taxes.webp";
-import profit from "../img/profit.webp";
-import totalAmount from "../img/total_amount.webp";
+import expenses from "../../../Assets/img/expenses.webp";
+import taxes from "../../../Assets/img/taxes.webp";
+import profit from "../../../Assets/img/profit.webp";
+import totalAmount from "../../../Assets/img/total_amount.webp";
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
   btn: {
     color: "#596771",
     textTransform: "none",
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
   },
   img: {
     margin: 5,
@@ -32,7 +35,7 @@ export default function SimpleMenu() {
     <div className='sdush-menu'>
       <Button
         className={classes.btn}
-        aria-controls='simple-menu'
+        aria-controls='avatar-menu'
         aria-haspopup='true'
         onClick={handleClick}
       >
@@ -40,7 +43,7 @@ export default function SimpleMenu() {
         <img className={classes.img} src={mini} alt='mini_icon' />
       </Button>
       <Menu
-        id='simple-menu'
+        id='avatar-menu'
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}

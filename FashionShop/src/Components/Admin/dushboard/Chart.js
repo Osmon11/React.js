@@ -19,7 +19,6 @@ function getOption() {
     date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join("/"));
     data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
   }
-  console.log(data);
 
   let options = {
     color: ["#02a0df"],

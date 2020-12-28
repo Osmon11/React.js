@@ -1,10 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./header.css";
-import telly from "../../Assets/img/telly.webp";
 import ltelly from "../../Assets/img/white-telly.webp";
-import dollar from "../../Assets/img/1dollar.webp";
-import clock from "../../Assets/img/clock.webp";
 import facebook from "../../Assets/img/facebook.webp";
 import twitter from "../../Assets/img/twitter.webp";
 import instagram from "../../Assets/img/intsagram.webp";
@@ -53,25 +50,6 @@ const Header = React.memo(() => {
 
   return (
     <div className={classes.root} id='appBars'>
-      <AppBar className={classes.appBarRoot} position='static'>
-        <Toolbar className={classes.appBarRoot}>
-          <div className='roof'>
-            <Grid container>
-              {arrAppBar3.map((x, i) => {
-                return (
-                  <Grid key={x.alt + i} item xs={4}>
-                    <div className={x.class}>
-                      <img id='roof_icon' alt={x.alt} src={x.icon} />
-                      <span id='roof2'>{x.name}</span>
-                    </div>
-                  </Grid>
-                );
-              })}
-            </Grid>
-          </div>
-        </Toolbar>
-      </AppBar>
-
       <AppBar className={classes.appBarRoot} position='static'>
         <Toolbar className={classes.appBarRoot}>
           <div className='s_input'>
@@ -191,24 +169,4 @@ const arrAppBar2 = [
   { path: "*", name: twitter },
   { path: "*", name: instagram },
   { path: "*", name: youtube },
-];
-const arrAppBar3 = [
-  {
-    class: "roof3",
-    icon: telly,
-    alt: " telly icon",
-    name: "Free shipping ON all order",
-  },
-  {
-    class: "center",
-    icon: dollar,
-    alt: " dollar icon",
-    name: "100% MONEY BACK",
-  },
-  {
-    class: "roof3",
-    icon: clock,
-    alt: " clock icon",
-    name: "ONLINE SUPPORT 24/7",
-  },
 ];

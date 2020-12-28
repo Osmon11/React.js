@@ -6,7 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./Assets/react-redux/store";
-import { AuthProvider } from "./Admin/admin-log/auth";
+import { AuthProvider } from "./Components/Admin/admin-log/auth";
 
 export let rerenderDOM = () => {
   ReactDOM.render(
